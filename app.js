@@ -4,6 +4,7 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 
@@ -17,10 +18,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static('./public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// Rota Routes
+const userRoutes = require('./routes/userRoutes'); // Required do method userRouter (Router)
+app.use('/users', userRoutes); // Quando usuario digitar na rota /users
+
+const loginRoutes = require('./routes/loginRoutes');
+app.use('/login', loginRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,7 +46,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(3000, function() {
-    console.log('Example app listening on port 3000!');
+    console.log('Servidor Rodando na porta 3000!');
 });
 
 module.exports = app;
