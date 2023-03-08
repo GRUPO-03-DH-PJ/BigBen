@@ -5,9 +5,6 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 
-let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
-
 let app = express();
 
 // view engine setup
@@ -22,6 +19,9 @@ app.use(express.static('./public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Rota Routes
+const homeRoutes = require('./routes/homeRoutes');
+app.use('/home', homeRoutes);
+
 const userRoutes = require('./routes/userRoutes'); // Required do method userRouter (Router)
 app.use('/users', userRoutes); // Quando usuario digitar na rota /users
 

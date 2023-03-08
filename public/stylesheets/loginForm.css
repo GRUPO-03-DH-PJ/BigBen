@@ -23,7 +23,7 @@ a {
 
 body {
     padding-top: 5vh;  /* view height -> 5% da tela */
-    background-image: url('/images/img-fundo.jpg');
+    background-image: url('/img/img-fundo.jpg');
     background-size: cover;
     background-position: -150px;
 }
