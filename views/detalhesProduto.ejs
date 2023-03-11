@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <%- include('./partials/style') %>
+        <link rel="stylesheet" href="stylesheets/detalhesProduto.css">
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+        <section id="container">
+            <div class="product-name">
+                <h3>Processador AMD Ryzen 5 5600G, 3.9GHz (4.4GHz Max Turbo), AM4, Vídeo Integrado, 6 Núcleos</h3>
+            </div>
+            <div class="product-image">
+                <img src="../img/detalhe de produto.png" alt="">
+            </div>
+            <div class="product-info">
+                <h3 class="product-price">VALOR <br> R$ 1.000,00</h3>
+                <button type="submit" class="buy-button" name="comprar" value="comprar">
+                <a  href="">COMPRAR</a>
+            </button>
+                <br><br>
+                <button type="submit" class="cart-button" name="carrinho" value="carrinho">
+                <a class="adicionar" href="">ADICIONAR <br> AO CARRINHO</a>
+            </button>
+            </div>
+            <div class="product-description">
+                <h2>Descrição do Produto</h2>
+                <ul class="product-details">
+                    <li>Fabricante: AMD</li>
+                    <li>Série: 5600G</li>
+                    <li>Formato: ATX</li>
+                    <li>Altura: 6 Milímetros</li>
+                    <li>Largura: 40 Milímetros</li>
+                    <li>Resolução: 7680x4320</li>
+                    <li>Tipo de processador: AMD Ryzen 5 5600G</li>
+                    <li>Velocidade: 3.9GHz</li>
+                    <li>Tipo de Soquetes: Socket AM4</li>
+                    <li>Núcleos: 6</li>
+                </ul>
+            </div>
+        </section>
+        <%- include('./partials/footer') %>
+</body>
+
+</html>

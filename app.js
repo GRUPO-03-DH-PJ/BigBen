@@ -31,6 +31,9 @@ app.use('/login', loginRoutes);
 const categoriasRoutes = require('./routes/categoriasRoutes');
 app.use('/categorias', categoriasRoutes);
 
+const detalhesProdutoRoutes = require('./routes/detalhesProdutoRoutes');
+app.use('/detalhes', detalhesProdutoRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
