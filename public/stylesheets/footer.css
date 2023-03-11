@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -7,7 +7,6 @@
 
 .ilustra {
     width: 100%;
-    height: 140px;
 }
 
 .copy {
@@ -21,12 +20,12 @@
     background: #202020;
 }
 
- h2{
+h2 {
     text-align: center;
     color: orangered;
 }
 
-.conteudo{
+.conteudo {
     width: 100%;
     height: 50vh;
     display: flex;
@@ -34,7 +33,7 @@
     align-items: center;
 }
 
-.conteudo h1{
+.conteudo h1 {
     font-size: 15vw;
     text-transform: uppercase;
 }
@@ -53,7 +52,7 @@ footer#rodapes {
     padding: 20px;
 }
 
-#rodapes .boxs :nth-child(4){
+#rodapes .boxs :nth-child(4) {
     width: 400px;
 }
 
@@ -73,12 +72,12 @@ footer#rodapes {
     list-style: none;
 }
 
-.boxs ul li a{
+.boxs ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-.boxs ul li a:hover{
+.boxs ul li a:hover {
     color: rgb(168, 6, 6);
 }
 
@@ -95,19 +94,22 @@ footer#rodapes {
     justify-content: center;
     align-items: center;
     display: flex;
+    gap: 20px;
 }
 
-.sociais .social{
+.sociais .social {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
     background: #ddd;
     margin: 10px 0px;
     border-radius: 10px;
+    padding: 5px;
+}
+
+.social i {
+    color: blue;
+    font-size: 40px;
 }
 
 .boxs-conts {
@@ -115,28 +117,18 @@ footer#rodapes {
     justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
-@media(max-width: 950px)
-{
-    footer{
+@media(max-width: 950px) {
+    footer {
         flex-direction: column;
     }
-    footer{
+    footer {
         width: 100%;
         text-align: center;
     }
-    footer .boxs :nth-child(4){
+    footer .boxs :nth-child(4) {
         width: 100%;
     }
-    .ilustra{
+    .ilustra {
         flex-direction: column;
         width: 100%;
         text-align: center;

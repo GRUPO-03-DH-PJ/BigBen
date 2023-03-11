@@ -1,4 +1,5 @@
 /* Geral */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,100 +9,94 @@
 }
 
 .search-box {
-    position: absolute;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, -50%);
     background: #fff;
-    height: 50px;
     padding: 10px;
     border-radius: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
 }
+
 .search-text {
     background: none;
-    border: 0;
     outline: 0;
-
-    padding: 0;
-
     transition: 0.4s;
-
     font-size: 16px;
-    width: 0;
+    width: 320px;
+    padding-left: 20px;
 }
+
 .search-btn {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     cursor: pointer;
 }
+
 ::-webkit-input-placeholder {
     font-size: 17px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 
-    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #aeaeae;
 }
+
 .search-box:hover {
     padding-right: 0;
 }
 
-.loupe-white{
+.loupe-white {
     display: none;
 }
-.search-box:hover > .search-text {
-    width: 320px;
-    padding-left: 20px;
-}
-.search-box:hover > .search-btn {
+
+.search-box:hover>.search-btn {
     background: #447ce7;
 }
-.search-box:hover > .search-btn .loupe-blue {
+
+.search-box:hover>.search-btn .loupe-blue {
     display: none;
 }
-.search-box:hover > .search-btn .loupe-white {
+
+.search-box:hover>.search-btn .loupe-white {
     display: block;
 }
 
 #cabeçalho {
-    background: #FFF159 ;
-    height: 80px;
+    background: #FFF159;
 }
 
-.nav-link{
-    position:absolute ;
+#cabeçalho>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-link {
     width: 100%;
-    top: 12vh;
     overflow: hidden;
     background-color: #ff6500;
-    float: left;
-    outline:none;
+    outline: none;
     cursor: pointer;
     transition: 0.3s;
     font-size: 17px;
-    background-color: #FFF159;
+    background-color: #ff8d42;
     display: flex;
     justify-content: center;
     padding: 6px 15px;
-    float: right;
+    list-style: none;
 }
 
-.nav-link a{
+.nav-link a {
     color: #111;
     font-weight: 700;
     transition: 0.3s;
-    Padding: 30px;
+    padding: 30px;
+    text-decoration: none;
 }
-    
-.nav-link a:hover{
+
+.nav-link a:hover {
     color: #ffffff;
 }
-
-

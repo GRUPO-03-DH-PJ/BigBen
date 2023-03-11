@@ -1,5 +1,5 @@
 const categoriasController = {
-    home: (req, res, next) => {
+    categorias: (req, res, next) => {
         return res.render('categorias');
     }
 }
