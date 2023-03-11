@@ -45,7 +45,7 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
-app.listen(3000, function() {
+app.listen(3001, function() {
     console.log('Servidor Rodando na porta 3000!');
 });
 
