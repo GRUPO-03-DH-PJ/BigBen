@@ -28,6 +28,9 @@ app.use('/users', userRoutes); // Quando usuario digitar na rota /users
 const loginRoutes = require('./routes/loginRoutes');
 app.use('/login', loginRoutes);
 
+const categoriasRoutes = require('./routes/categoriasRoutes');
+app.use('/categorias', categoriasRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -45,7 +48,7 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
-app.listen(3000, function() {
+app.listen(3001, function() {
     console.log('Servidor Rodando na porta 3000!');
 });
 
