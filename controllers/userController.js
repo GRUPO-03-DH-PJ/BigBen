@@ -1,5 +1,7 @@
 const { validationResult } = require('express-validator'); // validando resultado
 
+
+
 const controller = {
     register: (req, res) =>{
         return res.render('registerForm');
@@ -10,7 +12,7 @@ const controller = {
        if (resultValidations.errors.length > 0) {
         return res.render('registerForm', {
             errors: resultValidations.mapped(),
-            oldData: req.bory  // mandando para views todoas as propriedade de errors
+            oldData: req.body  // mandando para views todoas as propriedade de errors
         });
        };
        return res.send('Ok, as validaçoes Passaram');

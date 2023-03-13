@@ -3,6 +3,7 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let session = require('express-session');
 
 
 let app = express();
@@ -11,6 +12,11 @@ let app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(session({ 
+    secret:"projetoE-commes",
+    resave:true,
+    saveUninitialized:true
+}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,19 +25,16 @@ app.use(express.static('./public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Rota Routes
-const homeRoutes = require('./routes/homeRoutes');
-app.use('/home', homeRoutes);
-
-const userRoutes = require('./routes/userRoutes'); // Required do method userRouter (Router)
-app.use('/users', userRoutes); // Quando usuario digitar na rota /users
-
-const loginRoutes = require('./routes/loginRoutes');
-app.use('/login', loginRoutes);
-
-const categoriasRoutes = require('./routes/categoriasRoutes');
-app.use('/categorias', categoriasRoutes);
-
 const detalhesProdutoRoutes = require('./routes/detalhesProdutoRoutes');
+const categoriasRoutes = require('./routes/categoriasRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const userRoutes = require('./routes/userRoutes');
+const homeRoutes = require('./routes/homeRoutes');
+
+app.use('/home', homeRoutes);
+app.use('/users', userRoutes); 
+app.use('/login', loginRoutes);
+app.use('/categorias', categoriasRoutes);
 app.use('/detalhes', detalhesProdutoRoutes);
 
 
@@ -52,7 +55,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(3001, function() {
-    console.log('Servidor Rodando na porta 3000!');
+    console.log('Servidor Rodando na porta 3001!');
 });
 
 module.exports = app;
