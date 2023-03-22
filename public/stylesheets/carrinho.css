@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+
+/* Define um estilo para o cabeçalho da tabela */
+
+thead {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+
+/* Define um estilo para as células de cabeçalho da tabela */
+
+th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+
+/* Define um estilo para as células da tabela */
+
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+/* Define um estilo para o rodapé da tabela */
+
+tfoot {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+
+/* Define um estilo para a div "formulario" */
+
+.formulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 30px 0;
+    background-color: #fefbfb;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.form1 {
+    width: 20%;
+    margin-left: 150px;
+}
+
+.form2 {
+    width: 20%;
+}
+
+.form3 {
+    width: 20%;
+    margin-right: 150px;
+}
+
+
+/* Define um estilo para os rótulos do formulário */
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* Define um estilo para os campos do formulário */
+
+input,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+/* Define um estilo para o botão "Enviar" */
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
