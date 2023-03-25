@@ -67,7 +67,25 @@ label {
 
 /* Define um estilo para os campos do formulário */
 
-input,
+.form1 input,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form2 input,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form3 input,
 select {
     padding: 10px;
     border: 1px solid #ccc;
@@ -89,11 +107,8 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #FF8D42;
+    background-color: blue;
 }
-
-
-/* Estilos para telas maiores que 768px */
 
 
 /* Estilos para telas menores que 768px */
