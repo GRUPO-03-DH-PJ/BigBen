@@ -91,3 +91,22 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #FF8D42;
 }
+
+
+/* Estilos para telas maiores que 768px */
+
+
+/* Estilos para telas menores que 768px */
+
+@media screen and (max-width: 768px) {
+    .formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form1,
+    .form2,
+    .form3 {
+        width: 100%;
+        margin: 0;
+    }
+}
