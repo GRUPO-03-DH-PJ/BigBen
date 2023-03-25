@@ -117,15 +117,15 @@ footer#rodapes {
     justify-content: center;
 }
 
-@media(max-width: 950px) {
-    footer {
+@media only screen and (max-width: 950px) {
+    footer#rodapes {
         flex-direction: column;
     }
-    footer {
+    #rodapes .boxs {
         width: 100%;
         text-align: center;
     }
-    footer .boxs :nth-child(4) {
+    #rodapes .boxs :nth-child(4) {
         width: 100%;
     }
     .ilustra {

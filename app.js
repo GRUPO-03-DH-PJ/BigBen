@@ -12,10 +12,10 @@ let app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(session({ 
-    secret:"projetoE-commes",
-    resave:true,
-    saveUninitialized:true
+app.use(session({
+    secret: "projetoE-commes",
+    resave: true,
+    saveUninitialized: true
 }));
 app.use(logger('dev'));
 app.use(express.json());
@@ -30,12 +30,14 @@ const categoriasRoutes = require('./routes/categoriasRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const userRoutes = require('./routes/userRoutes');
 const homeRoutes = require('./routes/homeRoutes');
+const carrinhoRoutes = require('./routes/carrinhoRoutes');
 
 app.use('/home', homeRoutes);
-app.use('/users', userRoutes); 
+app.use('/users', userRoutes);
 app.use('/login', loginRoutes);
 app.use('/categorias', categoriasRoutes);
 app.use('/detalhes', detalhesProdutoRoutes);
+app.use('/carrinho', carrinhoRoutes);
 
 
 // catch 404 and forward to error handler

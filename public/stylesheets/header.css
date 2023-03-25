@@ -1,4 +1,4 @@
-/* Geral */
+    /* Geral */
 
 * {
     margin: 0;
@@ -23,7 +23,8 @@
     outline: 0;
     transition: 0.4s;
     font-size: 16px;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     padding-left: 20px;
 }
 
@@ -100,3 +101,32 @@
 .nav-link a:hover {
     color: #ffffff;
 }
+
+
+/* Regras de mídia para tornar o layout responsivo */
+
+@media only screen and (max-width: 768px) {
+    /* Ajusta o tamanho máximo do input de busca */
+    .search-text {
+        max-width: 250px;
+    }
+    /* Altera o layout da navbar para uma lista vertical */
+    .nav-link {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #ff8d42;
+        padding: 0;
+        display: none;
+    }
+    .nav-link.show {
+        display: flex;
+    }
+    .nav-link a {
+        padding: 10px;
+        border-bottom: 1px solid #fff;
+    }
+    /* Adiciona um botão para exibir a navbar em telas pequenas */
+    #cabeçal
