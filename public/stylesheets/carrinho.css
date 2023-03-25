@@ -12,38 +12,19 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 30px 0;
+    border-radius: 20px;
 }
-
-
-/* Define um estilo para o cabeçalho da tabela */
-
-thead {
-    background-color: #eee;
-    font-weight: bold;
-}
-
-
-/* Define um estilo para as células de cabeçalho da tabela */
-
-th {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ccc;
-}
-
-
-/* Define um estilo para as células da tabela */
 
 td {
     padding: 10px;
     border: 1px solid #ccc;
+    text-align: center;
+    background-color: #fefbfb;
 }
 
-
-/* Define um estilo para o rodapé da tabela */
-
-tfoot {
-    background-color: #eee;
+thead {
+    background-color: #060606;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -98,11 +79,15 @@ select {
 
 /* Define um estilo para o botão "Enviar" */
 
-input[type="submit"] {
-    background-color: #333;
+button[type="submit"] {
+    background-color: #FF8D42;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF8D42;
 }
