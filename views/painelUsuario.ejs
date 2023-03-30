@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/painelUsuario.css">
+    <%- include('./partials/style') %>
+    <title>painelUsuario</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>NÚMERO DO PEDIDO</th>
+                    <th>STATUS</th>
+                    <th> DATA</th>
+                    <th>PAGAMENTO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#0000001</td>
+                    <td>Pendente</td>
+                    <td>30/03/2023</td>
+                    <td>Boleto Bancário</td>
+                </tr>
+                <tr>
+                    <td>#0000002</td>
+                    <td>Concluído</td>
+                    <td>20/02/2023</td>
+                    <td>Cartão</td>
+                </tr>
+                <tr>
+                    <td>#0000003</td>
+                    <td>Cancelado</td>
+                    <td>02/03/2023</td>
+                    <td>Pix</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <div class="btns">
+        <a class="atalho" href="">ATALHOS</a>
+        <a class="pedidos" href="">Meus Pedidos</a>
+        <a class="cliente" href="">Atendimento ao Cliente</a>
+        <a class="favorito" href="">Favoritos</a>
+    </div>
+        
+    <%- include('./partials/footer') %>
+</body>
+</html>

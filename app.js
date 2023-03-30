@@ -31,6 +31,7 @@ const loginRoutes = require('./routes/loginRoutes');
 const userRoutes = require('./routes/userRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const carrinhoRoutes = require('./routes/carrinhoRoutes');
+const painelRoutes = require('./routes/painelRoutes');
 
 app.use('/home', homeRoutes);
 app.use('/users', userRoutes);
@@ -38,6 +39,7 @@ app.use('/login', loginRoutes);
 app.use('/categorias', categoriasRoutes);
 app.use('/detalhes', detalhesProdutoRoutes);
 app.use('/carrinho', carrinhoRoutes);
+app.use('/painelUsuario', painelRoutes);
 
 
 // catch 404 and forward to error handler
