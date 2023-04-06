@@ -1,0 +1,26 @@
+window.addEventListener('load', function() {
+    let validaformulario = document.querySelector('div.formulario');
+
+    validaformulario.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let nome = document.querySelector('input.nome');
+        let email = document.querySelector('input.email');
+        let telfone = document.querySelector('input.telfone');
+        let endereco = document.querySelector('input.endereco');
+        let numero = document.querySelector('input.numero');
+        let complemento = document.querySelector('input.complemento');
+        let bairro = document.querySelector('input.bairro');
+        let cidade = document.querySelector('input.cidade');
+        let estado = document.querySelector('input.estado');
+        let cep = document.querySelector('input.cep');
+        let cartao = document.querySelector('input.cartao');
+        let nomeCartao = document.querySelector('input.nomeCartao');
+        
+
+
+
+
+
+
+    });
+});
