@@ -87,3 +87,7 @@ CREATE TABLE Carrinho (
     INDEX (IdCliente),
     INDEX (IdProduto)
 );
+
+/* código SQL para criar senha para o usuário root no banco de dados BigBen */
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'dh_grupo3_pi';
