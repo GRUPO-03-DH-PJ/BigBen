@@ -17,6 +17,87 @@ window.addEventListener('load', function() {
         let nomeCartao = document.querySelector('input.nomeCartao');
         let validade = document.querySelector('input.validade');
         let cvv = document.querySelector('input.cvv');
+        let parcelas = document.querySelector('input.parcelas');
+
+        if (nome.value == "") {
+            alert("Preencha o campo nome");
+            nome.focus();
+            return false;
+        }
+        if (email.value == "") {
+            alert("Preencha o campo email");
+            email.focus();
+            return false;
+        }
+        if (telfone.value == "") {
+            alert("Preencha o campo telefone");
+            telfone.focus();
+            return false;
+        }
+        if (endereco.value == "") {
+            alert("Preencha o campo endereço");
+            endereco.focus();
+            return false;
+        }
+        if (numero.value == "") {
+            alert("Preencha o campo número");
+            numero.focus();
+            return false;
+        }
+        if (complemento.value == "") {
+            alert("Preencha o campo complemento");
+            complemento.focus();
+            return false;
+        }
+        if (bairro.value == "") {
+            alert("Preencha o campo bairro");
+            bairro.focus();
+            return false;
+        }
+        if (cidade.value == "") {
+            alert("Preencha o campo cidade");
+            cidade.focus();
+            return false;
+        }
+        if (estado.value == "") {
+            alert("Preencha o campo estado");
+            estado.focus();
+            return false;
+        }
+        if (cep.value == "") {
+            alert("Preencha o campo cep");
+            cep.focus();
+            return false;
+
+        }
+        if (cartao.value == "") {
+            alert("Preencha o campo cartão");
+            cartao.focus();
+            return false;
+        }
+        if (nomeCartao.value == "") {
+            alert("Preencha o campo nome do cartão");
+            nomeCartao.focus();
+            return false;
+        }
+        if (validade.value == "") {
+            alert("Preencha o campo validade");
+            validade.focus();
+            return false;
+        }
+        if (cvv.value == "") {
+            alert("Preencha o campo cvv");
+            cvv.focus();
+            return false;
+        }
+        if (parcelas.value == "") {
+            alert("Preencha o campo parcelas");
+            parcelas.focus();
+            return false;
+        }
+        this.submit();
+
+
 
 
 
