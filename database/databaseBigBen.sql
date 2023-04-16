@@ -91,3 +91,19 @@ CREATE TABLE Carrinho (
 /* código SQL para criar senha para o usuário root no banco de dados BigBen */
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'dh_grupo3_pi';
+
+/* código SQL para a tabela pagamentos no banco de dados BigBen, pode ser executado apenas o bloco SQL abaixo */
+
+CREATE TABLE bigben.pagamento (
+  IdPagamento INT AUTO_INCREMENT PRIMARY KEY,
+  numero_cartao VARCHAR(16),
+  validade DATE,
+  cvv VARCHAR(3),
+  tipo_pagamento VARCHAR(10),
+  link_boleto VARCHAR(255),
+  link_pix VARCHAR(255),
+  IdPedido INT,
+  IdCliente INT,
+  FOREIGN KEY (IdPedido) REFERENCES bigben.pedido (IdPedido),
+  FOREIGN KEY (IdCliente) REFERENCES bigben.cliente (IdCliente)
+);
