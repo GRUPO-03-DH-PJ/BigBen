@@ -32,6 +32,13 @@ const userRoutes = require('./routes/userRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const carrinhoRoutes = require('./routes/carrinhoRoutes');
 const painelRoutes = require('./routes/painelRoutes');
+const fornecedorRoute = require('./routes/fornecedorRoute');
+const clienteRoute = require('./routes/clienteRoute');
+const produtoRoute = require('./routes/produtoRoute');
+const pagamentoRoute = require('./routes/pagamentoRoute');
+const itemPedidoRoute = require('./routes/itemPedidoRoute');
+const pedidoRoute = require('./routes/pedidoRoute');
+const produtosRoutes = require('./routes/produtosRoutes');
 
 app.use('/home', homeRoutes);
 app.use('/users', userRoutes);
@@ -40,6 +47,14 @@ app.use('/categorias', categoriasRoutes);
 app.use('/detalhes', detalhesProdutoRoutes);
 app.use('/carrinho', carrinhoRoutes);
 app.use('/painelUsuario', painelRoutes);
+app.use('/fornecedor', fornecedorRoute);
+app.use('/cliente', clienteRoute);
+app.use('/produto', produtoRoute);
+app.use('/pagamento', pagamentoRoute);
+app.use('/itemPedido', itemPedidoRoute);
+app.use('/pedidos', pedidoRoute);
+app.use('/produtos', produtosRoutes);
+
 
 
 // catch 404 and forward to error handler

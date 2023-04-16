@@ -107,3 +107,8 @@ CREATE TABLE bigben.pagamento (
   FOREIGN KEY (IdPedido) REFERENCES bigben.pedido (IdPedido),
   FOREIGN KEY (IdCliente) REFERENCES bigben.cliente (IdCliente)
 );
+
+/* código SQL para adicionar caompo valor_total na tabela pagamentos no banco de dados BigBen, pode ser executado apenas o bloco SQL abaixo */
+
+ALTER TABLE bigben.pagamento
+ADD COLUMN valor_total DECIMAL(10,2);
