@@ -43,7 +43,7 @@
                 </tfoot>
             </table>
             <form class="formulario" method="post" action="">
-                <div class="form1">
+                <form class="form1" method="post" action="/cliente">
                     <h2>Informações do Cliente</h2>
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
@@ -59,8 +59,8 @@
 
                     <label for="numero">Número:</label>
                     <input type="text" id="numero" name="numero">
-                </div>
-                <div class="form2">
+                </form>
+                <form class="form2" method="post" action="/cliente">
 
                     <label for="complemento">Complemento:</label>
                     <input type="text" id="complemento" name="complemento">
@@ -101,32 +101,32 @@
 
                     <label for="cep">CEP:</label>
                     <input type="text" id="cep" name="cep" required>
-                </div>
-                <div class="form3">
-                    <h2>Dados de Pagamento</h2>
-                    <label for="pagamento">Forma de Pagamento:</label>
-                    <select id="pagamento" name="pagamento" required>
+                    </div>
+                    <form class="form3" method="post" action="/pagamento">
+                        <h2>Dados de Pagamento</h2>
+                        <label for="pagamento">Forma de Pagamento:</label>
+                        <select id="pagamento" name="pagamento" required>
                     <option value="">Selecione...</option>
                     <option value="boleto">Boleto Bancário</option>
                     <option value="pix">PIX</option>
                     <option value="cartao">Cartão de Crédito</option>
                 </select>
 
-                    <h3>Opções de Pagamento</h3>
-                    <div class="opcoes-pagamento">
-                        <label for="cartao">Número do Cartão:</label>
-                        <input type="text" id="cartao" name="cartao" placeholder="XXXX XXXX XXXX XXXX">
+                        <h3>Opções de Pagamento</h3>
+                        <div class="opcoes-pagamento">
+                            <label for="cartao">Número do Cartão:</label>
+                            <input type="text" id="cartao" name="cartao" placeholder="XXXX XXXX XXXX XXXX">
 
-                        <label for="validade">Validade:</label>
-                        <input type="month" id="validade" name="validade">
+                            <label for="validade">Validade:</label>
+                            <input type="month" id="validade" name="validade">
 
-                        <label for="cvv">CVV:</label>
-                        <input type="text" id="cvv" name="cvv" maxlength="3">
-                    </div>
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" maxlength="3">
+                        </div>
 
-                    <button type="submit">Finalizar Compra</button>
-                </div>
-            </form>
+                        <button type="submit">Finalizar Compra</button>
+                    </form>
+                </form>
 
         </main>
         <%- include('./partials/footer') %>
