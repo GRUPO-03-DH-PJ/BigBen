@@ -15,7 +15,10 @@ window.addEventListener('load', function() {
         let cep = document.querySelector('input.cep');
         let cartao = document.querySelector('input.cartao');
         let nomeCartao = document.querySelector('input.nomeCartao');
-        
+        let validade = document.querySelector('input.validade');
+        let cvv = document.querySelector('input.cvv');
+
+
 
 
 
