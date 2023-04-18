@@ -1,12 +1,5 @@
 const Carrinho = require('../models/carrinho');
 
-
-const carrinhoController = {
-    carrinho: (req, res, next) => {
-        return res.render('carrinho');
-    },
-}
-
 exports.create = async(req, res) => {
     try {
         const carrinho = await Carrinho.create(req.body);
@@ -62,7 +55,3 @@ exports.delete = async(req, res) => {
         return res.status(500).json({ error: error.message });
     }
 };
-
-
-
-module.exports = carrinhoController;

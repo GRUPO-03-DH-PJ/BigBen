@@ -33,10 +33,10 @@ const homeRoutes = require('./routes/homeRoutes');
 const carrinhoRoutes = require('./routes/carrinhoRoutes');
 const painelRoutes = require('./routes/painelRoutes');
 const fornecedorRoute = require('./routes/fornecedorRoute');
-const clienteRoute = require('./routes/clienteRoute');
-const produtoRoute = require('./routes/produtoRoute');
-const pagamentoRoute = require('./routes/pagamentoRoute');
-const itemPedidoRoute = require('./routes/itemPedidoRoute');
+const clienteRoute = require('./routes/clienteRoutes');
+const produtoRoute = require('./routes/produtosRoutes');
+const pagamentoRoute = require('./routes/pagamentoRoutes');
+const itemPedidoRoute = require('./routes/itemPedidoRoutes');
 const pedidoRoute = require('./routes/pedidoRoute');
 const produtosRoutes = require('./routes/produtosRoutes');
 

@@ -55,3 +55,5 @@ const pagamentoController = {
         }
     },
 };
+
+module.exports = pagamentoController
