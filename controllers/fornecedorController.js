@@ -1,6 +1,6 @@
 const Fornecedor = require('../models/fornecedor');
 
-exports.findAll = async(req, res) => {
+findAll: async(req, res) => {
     try {
         const fornecedores = await Fornecedor.findAll();
         return res.status(200).json(fornecedores);

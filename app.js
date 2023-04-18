@@ -32,12 +32,12 @@ const userRoutes = require('./routes/userRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const carrinhoRoutes = require('./routes/carrinhoRoutes');
 const painelRoutes = require('./routes/painelRoutes');
-const fornecedorRoute = require('./routes/fornecedorRoute');
-const clienteRoute = require('./routes/clienteRoute');
-const produtoRoute = require('./routes/produtoRoute');
-const pagamentoRoute = require('./routes/pagamentoRoute');
-const itemPedidoRoute = require('./routes/itemPedidoRoute');
-const pedidoRoute = require('./routes/pedidoRoute');
+const fornecedorRoutes = require('./routes/fornecedorRoutes');
+const clienteRoutes = require('./routes/clienteRoutes');
+const produtoRoutes = require('./routes/produtoRoutes');
+const pagamentoRoutes = require('./routes/pagamentoRoutes');
+const itemPedidoRoutes = require('./routes/itemPedidoRoutes');
+const pedidoRoutes = require('./routes/pedidoRoutes');
 const produtosRoutes = require('./routes/produtosRoutes');
 
 app.use('/home', homeRoutes);
@@ -47,12 +47,12 @@ app.use('/categorias', categoriasRoutes);
 app.use('/detalhes', detalhesProdutoRoutes);
 app.use('/carrinho', carrinhoRoutes);
 app.use('/painelUsuario', painelRoutes);
-app.use('/fornecedor', fornecedorRoute);
-app.use('/cliente', clienteRoute);
-app.use('/produto', produtoRoute);
-app.use('/pagamento', pagamentoRoute);
-app.use('/itemPedido', itemPedidoRoute);
-app.use('/pedidos', pedidoRoute);
+app.use('/fornecedor', fornecedorRoutes);
+app.use('/cliente', clienteRoutes);
+app.use('/produto', produtoRoutes);
+app.use('/pagamento', pagamentoRoutes);
+app.use('/itemPedido', itemPedidoRoutes);
+app.use('/pedidos', pedidoRoutes);
 app.use('/produtos', produtosRoutes);
 
 
