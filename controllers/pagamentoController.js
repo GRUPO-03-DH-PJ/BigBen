@@ -56,4 +56,4 @@ const pagamentoController = {
     },
 };
 
-module.exports = pagamentoController
+module.exports = pagamentoController;
