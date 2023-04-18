@@ -1,6 +1,6 @@
 const Fornecedor = require('../models/fornecedor');
 
-findAll: async(req, res) => {
+exports.findAll = async(req, res) => {
     try {
         const fornecedores = await Fornecedor.findAll();
         return res.status(200).json(fornecedores);
@@ -56,5 +56,3 @@ exports.delete = async(req, res) => {
         return res.status(500).json({ error: error.message });
     }
 };
-
-module.exports = exports;
