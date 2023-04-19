@@ -37,6 +37,7 @@ const clienteRoutes = require('./routes/clienteRoutes');
 const pagamentoRoutes = require('./routes/pagamentoRoutes');
 const itemPedidoRoutes = require('./routes/itemPedidoRoutes');
 const pedidoRoutes = require('./routes/pedidoRoutes');
+const produtosRoutes = require('./routes/produtosRoutes');
 
 app.use('/home', homeRoutes);
 app.use('/users', userRoutes);
@@ -47,7 +48,6 @@ app.use('/carrinho', carrinhoRoutes);
 app.use('/painelUsuario', painelRoutes);
 app.use('/fornecedor', fornecedorRoutes);
 app.use('/cliente', clienteRoutes);
-app.use('/produto', produtoRoutes);
 app.use('/pagamento', pagamentoRoutes);
 app.use('/itemPedido', itemPedidoRoutes);
 app.use('/pedidos', pedidoRoutes);

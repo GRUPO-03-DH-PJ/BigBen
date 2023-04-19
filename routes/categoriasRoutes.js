@@ -7,3 +7,5 @@ router.get('/', categoriasController.findAll);
 router.get('/:id', categoriasController.findOne);
 router.put('/:id', categoriasController.update);
 router.delete('/:id', categoriasController.delete);
+
+module.exports = router;
