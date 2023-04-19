@@ -1,61 +1,61 @@
 const ItemPedido = require('../models/ItemPedido');
 
-class itemPedidoController {
-    static async findAll(req, res) {
+const itemPedidoController = {
+    findAll: async(req, res) => {
         try {
             const itensPedido = await ItemPedido.findAll();
             return res.status(200).json(itensPedido);
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
-    }
+    },
 
-    static async findOne(req, res) {
+    findOne: async(req, res) => {
         try {
             const itemPedido = await ItemPedido.findByPk(req.params.id);
-            if (!itemPedido) {
-                return res.status(404).json({ message: 'Item do Pedido não encontrado' });
+            if (itemPedido) {
+                return res.status(200).json(itemPedido);
             }
-            return res.status(200).json(itemPedido);
+            return res.status(404).json({ error: 'Item do Pedido não encontrado' });
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
-    }
+    },
 
-    static async create(req, res) {
+    create: async(req, res) => {
         try {
             const itemPedido = await ItemPedido.create(req.body);
             return res.status(201).json(itemPedido);
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
-    }
+    },
 
-    static async update(req, res) {
+    update: async(req, res) => {
         try {
             const itemPedido = await ItemPedido.findByPk(req.params.id);
-            if (!itemPedido) {
-                return res.status(404).json({ message: 'Item do Pedido não encontrado' });
+            if (itemPedido) {
+                await itemPedido.update(req.body);
+                return res.status(200).json(itemPedido);
             }
-            await itemPedido.update(req.body);
-            return res.status(200).json(itemPedido);
+            return res.status(404).json({ error: 'Item do Pedido não encontrado' });
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
-    }
+    },
 
-    static async delete(req, res) {
+    delete: async(req, res) => {
         try {
             const itemPedido = await ItemPedido.findByPk(req.params.id);
-            if (!itemPedido) {
-                return res.status(404).json({ message: 'Item do Pedido não encontrado' });
+            if (itemPedido) {
+                await itemPedido.destroy();
+                return res.status(204).json();
             }
-            await itemPedido.destroy();
-            return res.status(204).json();
+            return res.status(404).json({ error: 'Item do Pedido não encontrado' });
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
-    }
-}
+    },
+};
 
 module.exports = itemPedidoController;
