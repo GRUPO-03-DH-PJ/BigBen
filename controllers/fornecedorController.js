@@ -57,5 +57,3 @@ const fornecedorController = {
         }
     },
 };
-
-module.exports = fornecedorController;

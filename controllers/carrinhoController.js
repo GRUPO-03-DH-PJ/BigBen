@@ -1,41 +1,43 @@
 const Carrinho = require('../models/carrinho');
 
+
 const carrinhoController = {
     carrinho: (req, res, next) => {
         return res.render('carrinho');
     },
+}
 
-    create: async(req, res) => {
-        try {
-            const carrinho = await Carrinho.create(req.body);
-            return res.status(201).json(carrinho);
-        } catch (error) {
-            return res.status(500).json({ error: error.message });
+exports.create = async(req, res) => {
+    try {
+        const carrinho = await Carrinho.create(req.body);
+        return res.status(201).json(carrinho);
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
+
+exports.findAll = async(req, res) => {
+    try {
+        const carrinhos = await Carrinho.findAll();
+        return res.status(200).json(carrinhos);
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
+
+exports.findOne = async(req, res) => {
+    try {
+        const carrinho = await Carrinho.findByPk(req.params.id);
+        if (carrinho) {
+            return res.status(200).json(carrinho);
         }
-    },
+        return res.status(404).json({ error: 'Carrinho não encontrado' });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
 
-    findAll: async(req, res) => {
-        try {
-            const carrinhos = await Carrinho.findAll();
-            return res.status(200).json(carrinhos);
-        } catch (error) {
-            return res.status(500).json({ error: error.message });
-        }
-    },
-
-    findOne: async(req, res) => {
-        try {
-            const carrinho = await Carrinho.findByPk(req.params.id);
-            if (carrinho) {
-                return res.status(200).json(carrinho);
-            }
-            return res.status(404).json({ error: 'Carrinho não encontrado' });
-        } catch (error) {
-            return res.status(500).json({ error: error.message });
-        }
-    },
-
-    update: async(req, res) => {
+update: async(req, res) => {
         try {
             const carrinho = await Carrinho.findByPk(req.params.id);
             if (carrinho) {
@@ -48,7 +50,7 @@ const carrinhoController = {
         }
     },
 
-    delete: async(req, res) => {
+    exports.delete = async(req, res) => {
         try {
             const carrinho = await Carrinho.findByPk(req.params.id);
             if (carrinho) {
@@ -59,7 +61,8 @@ const carrinhoController = {
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
-    },
-};
+    };
+
+
 
 module.exports = carrinhoController;
