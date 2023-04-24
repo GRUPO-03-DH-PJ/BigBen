@@ -21,6 +21,8 @@ const Carrinho = sequelize.define('Carrinho', {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false
     }
+}, {
+    tableName: 'carrinho',
 });
 
 Carrinho.belongsTo(Produto, { foreignKey: 'IdProduto' });

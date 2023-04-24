@@ -8,7 +8,7 @@ const sequelize = new Sequelize('bigben', 'root', 'dh_grupo3_pi', {
     database: 'bigben',
     dialect: 'mysql',
     define: {
-        timestamps: true,
+        timestamps: false,
     }
 });
 

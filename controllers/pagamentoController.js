@@ -4,13 +4,20 @@ const Pagamento = require('../models/pagamento');
 
 const pagamentoController = {
     create: async(req, res) => {
+        const { formaDePagamento, numCartao, validadeCartao, cvvCartao, nomeCartao } = req.body;
+        const { nome, email, cpf, senha, endereco } = req.body;
         try {
+            const cliente = await Cliente.findOne({ where: { cpf } });
+            if (!cliente) {
+                await Cliente.create({ nome, email, cpf, senha, endereco });
+            }
             const pagamento = await Pagamento.create(req.body);
             return res.status(201).json(pagamento);
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
     },
+
     findAll: async(req, res) => {
         try {
             const pagamentos = await Pagamento.findAll();
