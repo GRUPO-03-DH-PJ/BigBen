@@ -24,6 +24,8 @@ const Fornecedor = sequelize.define('Fornecedor', {
         allowNull: false,
         unique: true
     }
+}, {
+    tableName: 'fornecedor',
 });
 
 module.exports = Fornecedor;

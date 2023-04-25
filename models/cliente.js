@@ -52,7 +52,9 @@ const Cliente = sequelize.define('Cliente', {
     },
     Genero: {
         type: Sequelize.STRING(20)
-    }
+    },
+}, {
+    tableName: 'cliente',
 });
 
 module.exports = Cliente;

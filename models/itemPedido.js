@@ -20,6 +20,8 @@ const ItemPedido = sequelize.define('ItemPedido', {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false
     }
+}, {
+    tableName: 'itempedido',
 });
 
 ItemPedido.belongsTo(Produto, { foreignKey: 'IdProduto' });

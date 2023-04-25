@@ -45,6 +45,8 @@ const Pagamento = sequelize.define('Pagamento', {
         type: DataTypes.INTEGER,
         allowNull: true,
     },
+}, {
+    tableName: 'pagamento',
 });
 
 module.exports = Pagamento;

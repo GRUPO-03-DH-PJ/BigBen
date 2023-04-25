@@ -25,6 +25,8 @@ const Produto = sequelize.define('Produto', {
         type: Sequelize.INTEGER,
         allowNull: false
     }
+}, {
+    tableName: 'produto',
 });
 
 module.exports = Produto;

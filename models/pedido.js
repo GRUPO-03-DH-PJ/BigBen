@@ -42,6 +42,8 @@ const Pedido = sequelize.define('Pedido', {
             key: 'IdCliente'
         }
     }
+}, {
+    tableName: 'pedido',
 });
 
 module.exports = Pedido;
