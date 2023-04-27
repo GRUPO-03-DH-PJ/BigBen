@@ -1,76 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/registerForm.css">
-    <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/x-icon">
-    <title>Registra</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/registerForm.css">
+  <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/x-icon">
+  <title>Registra</title>
 </head>
+
 <body>
-   <div class="main-containerForm">
+  <div class="main-containerForm">
     <form id="register-Form" method="post" action="/users">
-            <h2>Cadastre-se para acessar</h2>
-            <hr>
-        <div class="full-box spacing">
-            <label for="name"><b>Nome completo</b></label>
-            <input type="text" name="name" value="<%=locals.oldData ? oldData.name : null %>" >
-           
-            <% if(locals.errors && errors.name) { %>
+      <h2>Cadastre-se para acessar</h2>
+      <hr>
+      <div class="full-box spacing">
+        <label for="name"><b>Nome completo</b></label>
+        <input type="text" name="name" value="<%=locals.oldData ? oldData.name : null %>">
+
+        <% if(locals.errors && errors.name) { %>
         <div class="error-validation"><%= errors.name.msg %></div>
-            <% } %>
-        </div>    
+        <% } %>
+      </div>
 
-        <div class="half-box">
-            <label for="email"><b>Email</b></label>
-            <input type="text" name="email">
+      <div class="half-box spacing">
+        <label for="email"><b>Email</b></label>
+        <input type="text" name="email">
 
-            <% if(locals.errors && errors.email) { %>
-            <div class="error-validation"><%= errors.email.msg %> 
-            </div>
-            <% } %>
-        </div>   
-
-        <div class="half-box">
-            <label for="email-repeat"><b>Confirme seu Email</b></label>
-            <input type="text" name="email-repeat">
-
-            <% if(locals.errors && errors.email) { %>
-            <div class="error-validation"><%= errors.email.msg %> 
-            </div>
-            <% } %>
+        <% if(locals.errors && errors.email) { %>
+        <div class="error-validation"><%= errors.email.msg %>
         </div>
+        <% } %>
+      </div>
 
-        <div class="half-box spacing">
-            <label for="psw"><b>Senha</b></label>
-            <input type="password" name="psw">
- 
-            <% if(locals.errors && errors.psw) { %>
-            <div class="error-validation"><%= errors.psw.msg %> 
-            </div>
-            <% } %>
-        </div> 
+      <div class="half-box spacing">
+        <label for="email-repeat"><b>Confirme seu Email</b></label>
+        <input type="text" name="email-repeat">
 
-        <div class="half-box">
-            <label for="psw-repeat"><b>Confirme a sua Senha</b></label>
-            <input type="password" name="psw-repeat">
-
-            <% if(locals.errors && errors.psw) { %>
-                <div class="error-validation"><%= errors.psw.msg %> 
-                </div>
-                <% } %>
+        <% if(locals.errors && errors.email) { %>
+        <div class="error-validation"><%= errors.email.msg %>
         </div>
+        <% } %>
+      </div>
 
-        <div class="full-box">
-            <input type="checkbox" name="agreement" id="agreement">
-            <label for="agreement" id="agreement-lebel"><b>Eu li e aceito os <a href="#">termos de uso</a></b></label>
-        </div>  
+      <div class="half-box spacing">
+        <label for="psw"><b>Senha</b></label>
+        <input type="password" name="psw">
 
-        <div class="full-box">
-            <input type="submit" id="btn-submit" value="Registrar">
+        <% if(locals.errors && errors.psw) { %>
+        <div class="error-validation"><%= errors.psw.msg %>
         </div>
+        <% } %>
+      </div>
+
+      <div class="half-box spacing">
+        <label for="psw-repeat"><b>Confirme a sua Senha</b></label>
+        <input type="password" name="psw-repeat">
+
+        <% if(locals.errors && errors.psw) { %>
+        <div class="error-validation"><%= errors.psw.msg %>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="half-box spacing">
+        <label for="cpf"><b>CPF</b></label>
+        <input type="text" name="cpf">
+
+        <% if(locals.errors && errors.cpf) { %>
+        <div class="error-validation"><%= errors.cpf.msg %>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="half-box spacing">
+        <label for="Telefone"><b>Telefone</b></label>
+        <input type="text" name="Telefone">
+
+        <% if(locals.errors && errors.Telefone) { %>
+        <div class="error-validation"><%= errors.Telefone.msg %>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="half-box spacing">
+        <label for="Celular"><b>Celular</b></label>
+        <input type="text" name="Celular">
+
+        <% if(locals.errors && errors.Celular) { %>
+        <div class="error-validation"><%= errors.Celular.msg %>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="half-box spacing">
+        <label for="Endereço"><b>Endereço</b></label>
+        <input type="text" name="Endereço">
+
+        <% if(locals.errors && errors.Endereço) { %>
+        <div class="error-validation"><%= errors.Endereço.msg %>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="half-box spacing">
+        <label for="Complemento"><b>Complemento</b></label>
+        <input type="text" name="Complemento">
+
+        <% if(locals.errors && errors.Complemento) { %>
+        <div class="error-validation"><%= errors.Complemento.msg %>
+        </div>
+        <% } %>
+      </div>
+
+
+      <div class="half-box spacing">
+        <label for="Numero"><b>Numero</b></label>
+        <input type="text" name="Numero">
+
+        <% if(locals.errors && errors.Numero) { %>
+        <div class="error-validation"><%= errors.Numero.msg %>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="half-box spacing">
+        <label for="Cidade"><b>Cidade</b></label>
+        <input type="text" name="Cidade">
+
+        <% if(locals.errors && errors.Cidade) { %>
+        <div class="error-validation"><%= errors.Cidade.msg %>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="half-box">
+        <label for="estado">Estado : </label>
+        <select id="estado" name="estado" required>
+          <option value=" ">Selecione...</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+      </div>
+
+      <div class="half-box spacing">
+        <label for="CEP"><b>CEP</b></label>
+        <input type="text" name="CEP">
+
+        <% if(locals.errors && errors.CEP) { %>
+        <div class="error-validation"><%= errors.CEP.msg %>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="half-box">
+        <label for="genero">Gênero:</label>
+        <select id="genero" name="genero">
+          <option value="">Selecione...</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="full-box ">
+        <input type="checkbox" name="agreement" id="agreement">
+        <label for="agreement" id="agreement-lebel"><b>Eu li e aceito os <a href="#">termos de uso</a></b></label>
+      </div>
+
+      <div class="full-box">
+        <input type="submit" id="btn-submit" value="Registrar">
+      </div>
     </form>
-   </div>
+  </div>
 </body>
+
 </html>
