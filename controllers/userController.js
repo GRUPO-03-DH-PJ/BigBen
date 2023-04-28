@@ -8,7 +8,7 @@ const controller = {
   register: (req, res) => {
     return res.render('registerForm');
   },
-  processoRegister: (req, res) => {
+  processoRegister: async (req, res) => {
     const resultValidations = validationResult(req); // requerindo as validaçoes no resultado de validaçoes.
     // Se o resultado da validações for vazio , enviamos o errors para o formulario
     if (resultValidations.errors.length > 0) {
@@ -18,7 +18,27 @@ const controller = {
       });
     };
 
-    let userExists = User.findOne("email", req.body.email);
+    const {
+      nome,
+      email,
+      celular,
+      telefone,
+      cpf,
+      endereco,
+      numero,
+      complemento,
+      cidade,
+      estado,
+      cep,
+      genero,
+      psw
+    } = req.body;
+
+    let userExists = await User.findOne({
+      where: {
+        email: email
+      }
+    });
 
     if (userExists) {
       return res.render('registerForm', {
@@ -32,11 +52,24 @@ const controller = {
     }
 
     let userToCreate = {
-      ...req.body,
+      NomeCliente: nome,
+      EmailCliente: email,
+      Celular: celular,
+      TelefoneCliente: telefone,
+      CPF: cpf,
+      EnderecoCliente: endereco,
+      Numero: numero,
+      Complemento: complemento,
+      Cidade: cidade,
+      Estado: estado,
+      CEP: cep,
+      Genero: genero,
+      senha: psw,
+
       psw: bcrypty.hashSync(req.body.psw, 10),
     }
 
-    let userCreated = User.create(userToCreate);
+    let userCreated = await User.create(userToCreate);
 
     return res.redirect('/login');
   },
