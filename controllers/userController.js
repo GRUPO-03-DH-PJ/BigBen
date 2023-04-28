@@ -64,9 +64,7 @@ const controller = {
       Estado: estado,
       CEP: cep,
       Genero: genero,
-      senha: psw,
-
-      psw: bcrypty.hashSync(req.body.psw, 10),
+      senha: bcrypty.hashSync(req.body.psw, 10)
     }
 
     let userCreated = await User.create(userToCreate);
