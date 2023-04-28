@@ -5,7 +5,7 @@ const Pagamento = require('../models/pagamento');
 
 const pagamentoController = {
     create: async(req, res) => {
-        const { pagamento, cartao, validade, cvv } = req.body;
+        const { pagamento, cartao, validade, cvv, valorTotal } = req.body;
 
         const { nome, email, celular, telefone, cpf, endereco, numero, complemento, cidade, estado, cep, genero, senha } = req.body;
         try {
@@ -27,7 +27,35 @@ const pagamentoController = {
                     senha: senha
                 });
             }
-            const pagamento = await Pagamento.create(req.body);
+            if (pagamento === 'cartao') {
+                Pagamento.create({
+                    numero_cartao: cartao,
+                    validade: validade,
+                    cvv: cvv,
+                    tipo_pagamento: pagamento,
+                    valor_total: valorTotal,
+                    IdPedido: pedido.IdPedido,
+                    IdCliente: cliente.get('IdCliente')
+                });
+            } else if (pagamento === 'boleto') {
+                Pagamento.create({
+                    tipo_pagamento: pagamento,
+                    valor_total: valorTotal,
+                    IdPedido: pedido.IdPedido,
+                    IdCliente: cliente.get('IdCliente'),
+                    link_boleto: 'abcdfg',
+                });
+            } else if (pagamento === 'pix') {
+                Pagamento.create({
+                    tipo_pagamento: pagamento,
+                    valor_total: valorTotal,
+                    IdPedido: pedido.IdPedido,
+                    IdCliente: cliente.get('IdCliente'),
+                    link_pix: 'abcdfg',
+                });
+            }
+
+
             return res.status(201).json(pagamento);
         } catch (error) {
             return res.status(500).json({ error: error.message });
