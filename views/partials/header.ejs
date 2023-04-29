@@ -1,34 +1,45 @@
-<!-- Cabeçalho com icone de Login e logo da Pagina -->
-<header id="cabeçalho">
-    <div>
-        <img src="/images/logotras.png" alt="logo-ilustrativo">
-        <div class="search-box">
-            <input type="text" class="search-text" placeholder="Pesquisar...">
-            <a class="search-btn">
-                <img class="loupe-blue" src="/images/loupe-blue.svg" alt="" width="25px" height="25ps">
-                <img class="loupe-white" src="/images/loupe-white.svg" alt="" width="25px" height="25ps">
-            </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/home"> <img src="/images/logotras.png" alt=""></a>
         </div>
+        <div class="search">
+            <form>
+                <input type="text" placeholder="Pesquise aqui...">
+            </form>
+        </div>
+        <div class="icons">
+            <abbr title="Perfil Usuario"><a href="/login" class="fa fa-user-circle-o"></a></abbr>
+            <abbr title="Favoritos"><a href="#" class="fa fa-heart"></a></abbr>
+            <abbr title="Carrinho"><a href="/carrinho" class="fa fa-shopping-cart"></a></abbr>
+            <a href="#" class="fa fa-navicon"></a>
+        </div>
+
     </div>
-    <nav class="nav-link">
-        <li>
-            <a href="/categorias">Departamentos</a>
-        </li>
-        <li>
-            <a href="/detalhesProduto">Lançamentos</a>
-        </li>
-        <li>
-            <a href="/home">Pc gamer</a>
-        </li>
-        <li>
-            <a href="#">TV</a>
-        </li>
-        <li>
-            <a href="/detalhes">Ofertas do Dia</a>
-        </li>
-        <li>
-            <ion-icon name="person-circle-sharp"></ion-icon>
-        </li>
-    </nav>
-    <!--cabeçalho-link-->
-</header>
+    <div class="links">
+        <a href="/categorias">Categorias</a>
+        <a href="#">Lançamentos</a>
+        <a href="#">Acessórios Gamer</a>
+        <a href="#">Celulares</a>
+        <a href="#">Outros</a>
+    </div>
+
+    <script>
+        document.getElementsByClassName("fa") [3] .addEventListener("click", function(){
+            document.getElementsByClassName("links") [0].classList.toggle("showmylinks");
+        });
+    </script>
+
+</body>
+</html>

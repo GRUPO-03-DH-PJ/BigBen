@@ -1,132 +1,85 @@
-    /* Geral */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
-    border: none;
+*{
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  box-sizing: border-box;
 }
 
-.search-box {
-    background: #fff;
-    padding: 10px;
-    border-radius: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
+.header {
+  background-color: #FFF159;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0px 25px;
+  height: 80px;
+  align-items: center;
 }
 
-.search-text {
-    background: none;
-    outline: 0;
-    transition: 0.4s;
-    font-size: 16px;
-    width: 100%;
-    max-width: 320px;
-    padding-left: 20px;
-}
-
-.search-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-::-webkit-input-placeholder {
-    font-size: 17px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #aeaeae;
-}
-
-.search-box:hover {
-    padding-right: 0;
-}
-
-.loupe-white {
-    display: none;
-}
-
-.search-box:hover>.search-btn {
-    background: #447ce7;
-}
-
-.search-box:hover>.search-btn .loupe-blue {
-    display: none;
-}
-
-.search-box:hover>.search-btn .loupe-white {
-    display: block;
-}
-
-#cabeçalho {
-    background: #FFF159;
-}
-
-#cabeçalho>div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.nav-link {
-    width: 100%;
-    overflow: hidden;
-    background-color: #ff6500;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 17px;
-    background-color: #ff8d42;
-    display: flex;
-    justify-content: center;
-    padding: 6px 15px;
-    list-style: none;
-}
-
-.nav-link a {
-    color: #111;
-    font-weight: 700;
-    transition: 0.3s;
-    padding: 30px;
-    text-decoration: none;
-}
-
-.nav-link a:hover {
-    color: #ffffff;
+.logo img{
+  height: 80px;
 }
 
 
-/* Regras de mídia para tornar o layout responsivo */
+.search input{
+  height: 35px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
 
-@media only screen and (max-width: 768px) {
-    /* Ajusta o tamanho máximo do input de busca */
-    .search-text {
-        max-width: 250px;
-    }
-    /* Altera o layout da navbar para uma lista vertical */
-    .nav-link {
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        background-color: #ff8d42;
-        padding: 0;
-        display: none;
-    }
-    .nav-link.show {
-        display: flex;
-    }
-    .nav-link a {
-        padding: 10px;
-        border-bottom: 1px solid #fff;
-    }
-    /* Adiciona um botão para exibir a navbar em telas pequenas */
- }
+.icons{
+  text-align: right;
+}
+
+.icons .fa{
+  color: #000;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 0px 10px;
+  transition: 0.5s;
+}
+
+.fa:hover{
+  color: #FFAD01;
+}
+
+.links{
+  background-color: #FFF159;
+  display: none;
+}
+
+.links a{
+  color: #000000;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.showmylinks{
+  display: block;
+}
+
+@media only screen and (max-width:600px){
+  .header{
+      grid-template-columns: auto;
+      height: 120px;
+      padding: 15px 5px;
+  }
+  .logo img{
+      width: 110px;
+      height: auto;
+  }
+
+  .search{
+      grid-column: 2;
+      grid-row: 2;
+      grid-column: 1/span 2;
+      margin-bottom: px;
+  }
+  .icons .fa{
+      padding: 5px;
+  }
+}
