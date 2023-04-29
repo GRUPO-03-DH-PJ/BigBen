@@ -1,14 +1,18 @@
-const User = require('./clienteController')
+const User = require('../models/cliente')
 const bcrypty = require('bcrypt');
 
 function login(req, res) {
   return res.render('loginForm')
 };
 
-function loggingIn(req, res) {
-  let userToLogin = User.findOne('email', req.body.email);
+async function loggingIn(req, res) {
+  let userToLogin = await User.findOne({
+    where: {
+      EmailCliente: req.body.email
+    }
+  })
   if (userToLogin) {
-    let isPasswordVerified = bcrypty.compareSync(req.body.psw, userToLogin.psw)
+    let isPasswordVerified = await bcrypty.compare(req.body.psw, userToLogin.Senha);
     if (isPasswordVerified) {
       return res.render('home')
     }

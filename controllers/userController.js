@@ -36,7 +36,7 @@ const controller = {
 
     let userExists = await User.findOne({
       where: {
-        email: email
+        EmailCliente: email
       }
     });
 
@@ -66,7 +66,6 @@ const controller = {
       Genero: genero,
       Senha: bcrypty.hashSync(req.body.psw, 10)
     }
-
     let userCreated = await User.create(userToCreate);
 
     return res.redirect('/login');

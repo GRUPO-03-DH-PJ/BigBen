@@ -17,7 +17,7 @@
       <hr>
       <div class="full-box spacing">
         <label for="name"><b>Nome completo</b></label>
-        <input type="text" name="name" value="<%=locals.oldData ? oldData.name : null %>">
+        <input type="text" name="nome" value="<%=locals.oldData ? oldData.name : null %>">
 
         <% if(locals.errors && errors.name) { %>
         <div class="error-validation"><%= errors.name.msg %></div>
@@ -96,7 +96,7 @@
 
       <div class="half-box spacing">
         <label for="endereço"><b>Endereço</b></label>
-        <input type="text" name="endereço">
+        <input type="text" name="endereco">
 
         <% if(locals.errors && errors.endereço) { %>
         <div class="error-validation"><%= errors.endereço.msg %>
