@@ -53,6 +53,10 @@ const Cliente = sequelize.define('Cliente', {
     Genero: {
         type: Sequelize.STRING(20)
     },
+    Senha: {
+        type: Sequelize.STRING(50)
+    },
+
 }, {
     tableName: 'cliente',
 });
