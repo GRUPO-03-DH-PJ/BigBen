@@ -1,5 +1,5 @@
 const User = require('../models/cliente')
-const bcrypty = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 function login(req, res) {
   return res.render('loginForm')
@@ -11,12 +11,12 @@ async function loggingIn(req, res) {
       EmailCliente: req.body.email
     }
   })
+
   if (userToLogin) {
-    let isPasswordVerified = await bcrypty.compare(req.body.psw, userToLogin.Senha);
-    if (isPasswordVerified) {
+    await bcrypt.compareSync(req.body.Senha, userToLogin.Senha);
+    if (userToLogin) {
       return res.render('home')
     }
-
     return res.render('loginForm', {
       errors: {
         email: {
