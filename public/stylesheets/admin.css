@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  background-color: aqua;
+}
+
+#links {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 545px;
+  margin-right: 3%;
+}
+
+#links a {
+  color: #c01414;
+  text-decoration: none;
+  display: block;
+  padding: 40px;
+  font-size: 25px;
+}
+
+.header {
+  background-color: #FFF159;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0px 25px;
+  height: 80px;
+  align-items: center;
+}

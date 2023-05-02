@@ -41,6 +41,7 @@ const pagamentoRoutes = require('./routes/pagamentoRoutes');
 const itemPedidoRoutes = require('./routes/itemPedidoRoutes');
 const pedidoRoutes = require('./routes/pedidoRoutes');
 const produtosRoutes = require('./routes/produtosRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 app.use('/home', homeRoutes);
 app.use('/users', userRoutes);
@@ -55,6 +56,7 @@ app.use('/pagamento', pagamentoRoutes);
 app.use('/itemPedido', itemPedidoRoutes);
 app.use('/pedidos', pedidoRoutes);
 app.use('/produtos', produtosRoutes);
+app.use('/administrador', adminRoutes)
 
 
 
