@@ -19,11 +19,21 @@
       <div class="half-box spacing">
         <label for="email"><b>Email</b></label>
         <input type="text" name="email">
+
+        <% if(locals.errors && errors.email) { %>
+        <div class="error-validation"><%= errors.email.msg %></div>
+        <% } %>
+
       </div>
 
       <div class="half-box spacing">
         <label for="psw"><b>Senha</b></label>
         <input type="password" name="Senha">
+
+        <% if(locals.errors && errors.Senha) { %>
+        <div class="error-validation"><%= errors.Senha.msg %></div>
+        <% } %>
+
       </div>
 
       <div class="full-box">

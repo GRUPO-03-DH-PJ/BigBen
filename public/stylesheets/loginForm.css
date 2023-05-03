@@ -92,3 +92,10 @@ input[type="submit"] {
   height: 40px;
   cursor: pointer;
 }
+
+.error-validation {
+  color: #ff1a1a;
+  position: absolute;
+  top: 57px;
+  font-size: .8rem;
+}

@@ -13,16 +13,23 @@ async function loggingIn(req, res) {
   })
 
   if (userToLogin) {
-
-    const passwordVerific = bcrypt.compareSync(userToLogin.Senha, req.body.Senha);
-
-    if (passwordVerific) {
-      return res.render('home')
+    const passWordVerific = bcrypt.compareSync(req.body.Senha, userToLogin.Senha);
+    if (passWordVerific) {
+      console.log("Deu Certo!")
+    } else {
+      return res.render('loginForm', {
+        errors: {
+          email: {
+            msg: "A senha está inválida"
+          }
+        }
+      });
     }
+  } else {
     return res.render('loginForm', {
       errors: {
         email: {
-          msg: "A senha está inválida"
+          msg: "Este email não foi encontrado"
         }
       }
     });
