@@ -13,8 +13,10 @@ async function loggingIn(req, res) {
   })
 
   if (userToLogin) {
-    await bcrypt.compareSync(req.body.Senha, userToLogin.Senha);
-    if (userToLogin) {
+
+    const passwordVerific = bcrypt.compareSync(userToLogin.Senha, req.body.Senha);
+
+    if (passwordVerific) {
       return res.render('home')
     }
     return res.render('loginForm', {
