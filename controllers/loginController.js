@@ -1,3 +1,6 @@
+const {
+  where
+} = require('sequelize');
 const User = require('../models/cliente')
 const bcrypt = require('bcrypt');
 
@@ -10,30 +13,30 @@ async function loggingIn(req, res) {
     where: {
       EmailCliente: req.body.email
     }
-  })
-
+  });
+  console.log(userToLogin)
   if (userToLogin) {
-    const passWordVerific = bcrypt.compareSync(req.body.Senha, userToLogin.Senha);
-    if (passWordVerific) {
-      console.log("Deu Certo!")
-    } else {
-      return res.render('loginForm', {
-        errors: {
-          email: {
-            msg: "A senha está inválida"
-          }
-        }
-      });
+    let isPasswordVerified = bcrypt.compareSync(req.body.Senha, userToLogin.Senha)
+    if (isPasswordVerified) {
+      return res.render('home')
     }
-  } else {
+
     return res.render('loginForm', {
       errors: {
         email: {
-          msg: "Este email não foi encontrado"
+          msg: "A senha está inválida"
         }
       }
     });
   }
+
+  return res.render('loginForm', {
+    errors: {
+      email: {
+        msg: "Este email não foi encontrado"
+      }
+    }
+  });
 };
 
 
