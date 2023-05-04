@@ -2,7 +2,7 @@ const {
   validationResult
 } = require('express-validator'); // validando resultado
 const User = require('../models/cliente');
-const bcrypty = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 const controller = {
   register: (req, res) => {
@@ -64,7 +64,7 @@ const controller = {
       Estado: estado,
       CEP: cep,
       Genero: genero,
-      Senha: bcrypty.hashSync(req.body.psw, 10)
+      Senha: bcrypt.hashSync(req.body.psw, 10),
     }
     let userCreated = await User.create(userToCreate);
 
