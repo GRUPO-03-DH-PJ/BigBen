@@ -1,24 +1,39 @@
-const btnAzul = document.querySelector('#btn-azul');
-const btnVermelho = document.querySelector('#btn-vemelho');
-const btnVerde = document.querySelector('#btn-verde');
-const divVermelho = document.querySelector('.vermelho');
-const divAzul = document.querySelector('.azul');
-const divVerde = document.querySelector('.verde');
+const btnAtualizar = document.querySelector('#atualizar');
+const btnCriar = document.querySelector('#criar');
+const btnDeletar = document.querySelector('#deleta');
+const btnList = document.querySelector('#list');
+const btnOutros = document.querySelector('#outros');
+
+const divCreate = document.querySelector('.create');
+const divUpdate = document.querySelector('.update');
+const divdelet = document.querySelector('.delet');
+const divOutros = document.querySelector('.outros');
+const divList = document.querySelector('.list');
 
 function removerVisivel() {
-  divAzul.classList.remove('visivel');
-  divVermelho.classList.remove('visivel');
-  divVerde.classList.remove('visivel');
+  divCreate.classList.remove('.visivel');
+  divUpdate.classList.remove('.visivel');
+  divdelet.classList.remove('.visivel');
+  divOutros.classList.remove('.visivel');
+  divList.classList.remove('.visivel');
 }
-btnAzul.addEventListener('click', () => {
+btnAtualizar.addEventListener('click', () => {
   removerVisivel();
-  divAzul.classList.add('visivel');
+  divUpdate.classList.add('.visivel');
 })
-divVermelho.addEventListener('click', () => {
+btnCriar.addEventListener('click', () => {
   removerVisivel();
-  divVermelho.classList.add('visivel');
+  divCreate.classList.add('.visivel');
 })
-btnVerde.addEventListener('click', () => {
+btnDeletar.addEventListener('click', () => {
   removerVisivel();
-  divVerde.classList.add('visivel');
+  divdelet.classList.add('.visivel');
+})
+btnList.addEventListener('click', () => {
+  removerVisivel();
+  divList.classList.add('.visivel');
+})
+btnOutros.addEventListener('click', () => {
+  removerVisivel();
+  divOutros.classList.add('.visivel');
 })
