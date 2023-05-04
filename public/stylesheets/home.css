@@ -1,6 +1,6 @@
 
 
-*{ 
+*{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
     list-style: none;
-    
+
 }
 
 
@@ -35,20 +35,19 @@ section h1{
 }
 
 .Container-card-1{
-    display: grid;
+    display: flex;
     margin-top: 50px;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
     padding-top: 2rem;
-    display: grid;
     grid-template-columns: repeat(4, 3fr);
     grid-template-rows: repeat(4, 10vw);
-    grid-gap: 20px; 
+    grid-gap: 20px;
     text-align:center;
 }
-   
-   
+
+
 .cards img{
     width: 450px;
     height: 100px;
@@ -75,7 +74,7 @@ section h1{
     align-items: center;
     text-align: center;
     margin-top: 3rem;
-    
+
 }
 
 .Container-promoções img:hover{

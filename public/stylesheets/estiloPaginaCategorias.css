@@ -79,9 +79,7 @@ div.categorias {
     .item-link {
         width: 80vw;
         height: 40vh;
+
     }
-    item-link img {
-        width: 100%;
-        height: 100%;
-    }
-}
+
+  }
