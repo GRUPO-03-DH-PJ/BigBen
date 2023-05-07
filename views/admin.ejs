@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/admin.css">
-  <script defer src="scripts/functionAdmin.js"></script>
+  <script defer src="script/functionAdmin.js"></script>
   <title>Painel de Administrador</title>
 </head>
 
 <body>
   <header id="head">
     <h1>Olá, Administrador ${xx}</h1>
-    <a href="http://">
+    <a href="http://localhost:3001/login">
       <h1>Logar</h1>
     </a>
-    <a href="http://">
+    <a href="home">
       <h1>Sair</h1>
     </a>
   </header>
@@ -25,49 +25,49 @@
 
     <div class="slidebar">
       <ul>
-        <li><a href="" id="atualizar" name="update">Atualizar</a></li>
-        <li><a href="" id="criar" name="create">Criar</a></li>
-        <li><a href="" id="deleta" name="delet">Deletar</a></li>
-        <li><a href="" id="list" name="list">Listar</a></li>
-        <li><a href="" id="outros" name="outros">Outros</a></li>
+        <li><a><button id="atualizar" type="">Atualizar</button></a></li>
+        <li><a><button id="criar" type="">Criar</button></a></li>
+        <li><a><button id="deleta" type="">Deletar</button></a></li>
+        <li><a><button id="list" type="">Listar</button></a></li>
+        <li><a><button id="outros" type="">outros</button></a></li>
       </ul>
     </div>
 
     <main class="main">
-      <div class="update">
+      <div class="update visivel">
         <h2>Atualizar</h2>
         <input type="NomeProduto" placeholder="Nome do Produto...">
-        <input type="DescricaoProduto" placeholder="Descrição do Produto">
-        <input type="ImagemProduto" placeholder="Imagem do Produto">
-        <input type="PrecoProduto" placeholder="Preco do Produto">
+        <input type="DescricaoProduto" placeholder="Descrição do Produto...">
+        <input type="ImagemProduto" placeholder="Imagem do Produto...">
+        <input type="PrecoProduto" placeholder="Preco do Produto...">
         <button type="enviar">Enviar</button>
       </div>
 
       <div class="create">
         <h2>Criar</h2>
-        <input type="NomeProduto" placeholder="">
-        <input type="DescricaoProduto" placeholder="">
-        <input type="ImagemProduto" placeholder="">
-        <input type="PrecoProduto" placeholder="">
-        <button type="Enviar"></button>
+        <input type="NomeProduto" placeholder="Nome do Produto...">
+        <input type="DescricaoProduto" placeholder="Descrição do Produto...">
+        <input type="ImagemProduto" placeholder="Imagem do Produto...">
+        <input type="PrecoProduto" placeholder="Preco do Produto...">
+        <button type="enviar">Enviar</button>
       </div>
 
-      <div class="delet visivel">
+      <div class="delet">
         <h2>Deletar</h2>
-        <input type="NomeProduto" placeholder="">
-        <input type="DescricaoProduto" placeholder="">
-        <input type="ImagemProduto" placeholder="">
-        <input type="PrecoProduto" placeholder="">
-        <button type="Enviar"></button>
+        <input type="NomeProduto" placeholder="Nome do Produto...">
+        <input type="DescricaoProduto" placeholder="Descrição do Produto...">
+        <input type="ImagemProduto" placeholder="Imagem do Produto...">
+        <input type="PrecoProduto" placeholder="Preco do Produto...">
+        <button type="enviar">Enviar</button>
       </div>
 
       <div class="list">
         <h2>Listar</h2>
-        <input type="NomeProduto" placeholder="">
-        <input type="DescricaoProduto" placeholder="">
-        <input type="ImagemProduto" placeholder="">
-        <input type="PrecoProduto" placeholder="">
-        <button type="Enviar"></button>
+        <input type="NomeProduto" placeholder="Nome do Produto...">
+        <input type="DescricaoProduto" placeholder="Descrição do Produto...">
+        <input type="ImagemProduto" placeholder="Imagem do Produto...">
+        <input type="PrecoProduto" placeholder="Preco do Produto...">
+        <button type="enviar">Enviar</button>
       </div>
 
       <div class="outros">
@@ -76,12 +76,10 @@
         <input type="" placeholder="">
         <input type="" placeholder="">
         <input type="" placeholder="">
-        <button type="Enviar"></button>
+        <button type="enviar">Enviar</button>
       </div>
     </main>
-
   </div>
-  <script></script>
 </body>
 
 </html>

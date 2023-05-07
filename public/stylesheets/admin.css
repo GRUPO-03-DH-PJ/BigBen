@@ -64,6 +64,11 @@ li {
   color: #B3B3B3
 }
 
+.slidebar button {
+  height: 50px;
+  width: 80px;
+}
+
 .slidebar li {
   display: block;
   text-align: center;
@@ -86,12 +91,12 @@ li#active {
   background-color: #313131;
 }
 
-.slidebar li:hover i,
-li#active i {
+.slidebar li:hover a,
+li#active a {
   color: #17BCE8;
 }
 
-.slidebar li:focus i {
+.slidebar li:focus a {
   color: #17BCE8;
 }
 
