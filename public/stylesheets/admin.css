@@ -29,7 +29,7 @@ body {
   position: relative;
 }
 
-.slidebar {
+/* .slidebar {
   width: 20%;
   height: 500px;
   float: left;
@@ -98,6 +98,89 @@ li#active a {
 
 .slidebar li:focus a {
   color: #17BCE8;
+} */
+
+.slidebar {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+li {
+  margin-left: 10px;
+}
+
+button {
+  display: block;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #fff;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#atualizar:hover,
+#atualizar:focus,
+#atualizar:active {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+#criar:hover,
+#criar:focus,
+#criar:active {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+#deleta:hover,
+#deleta:focus,
+#deleta:active {
+  background-color: #f44336;
+  border-color: #f44336;
+}
+
+#list:hover,
+#list:focus,
+#list:active {
+  background-color: #FFC107;
+  border-color: #FFC107;
+}
+
+#outros:hover,
+#outros:focus,
+#outros:active {
+  background-color: #9C27B0;
+  border-color: #9C27B0;
 }
 
 .main {
