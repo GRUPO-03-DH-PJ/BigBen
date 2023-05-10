@@ -37,47 +37,57 @@
     <main class="main">
       <div class="update visivel">
         <h2>Atualizar</h2>
-        <input type="NomeProduto" placeholder="Nome do Produto...">
-        <input type="DescricaoProduto" placeholder="Descrição do Produto...">
-        <input type="ImagemProduto" placeholder="Imagem do Produto...">
-        <input type="PrecoProduto" placeholder="Preco do Produto...">
-        <button type="enviar">Enviar</button>
+        <form action="/atualizar" method="POST">
+          <input type="text" placeholder="Nome do Produto...">
+          <input type="text" placeholder="Descrição do Produto...">
+          <input type="file" placeholder="Imagem do Produto...">
+          <input type="number" placeholder="Preco do Produto...">
+          <button type="submit">Enviar</button>
+        </form>
       </div>
 
       <div class="create">
         <h2>Criar</h2>
-        <input type="NomeProduto" placeholder="Nome do Produto...">
-        <input type="DescricaoProduto" placeholder="Descrição do Produto...">
-        <input type="ImagemProduto" placeholder="Imagem do Produto...">
-        <input type="PrecoProduto" placeholder="Preco do Produto...">
-        <button type="enviar">Enviar</button>
+        <form action="/criar" method="POST">
+          <input type="text" placeholder="Nome do Produto...">
+          <input type="text" placeholder="Descrição do Produto...">
+          <input type="file" placeholder="Imagem do Produto...">
+          <input type="number" placeholder="Preco do Produto...">
+          <button type="submit">Enviar</button>
+        </form>
       </div>
 
       <div class="delet">
         <h2>Deletar</h2>
-        <input type="NomeProduto" placeholder="Nome do Produto...">
-        <input type="DescricaoProduto" placeholder="Descrição do Produto...">
-        <input type="ImagemProduto" placeholder="Imagem do Produto...">
-        <input type="PrecoProduto" placeholder="Preco do Produto...">
-        <button type="enviar">Enviar</button>
+        <form action="/deletar" method="POST">
+          <input type="text" placeholder="Nome do Produto...">
+          <input type="text" placeholder="Descrição do Produto...">
+          <input type="file" placeholder="Imagem do Produto...">
+          <input type="number" placeholder="Preco do Produto...">
+          <button type="submit">Enviar</button>
+        </form>
       </div>
 
       <div class="list">
         <h2>Listar</h2>
-        <input type="NomeProduto" placeholder="Nome do Produto...">
-        <input type="DescricaoProduto" placeholder="Descrição do Produto...">
-        <input type="ImagemProduto" placeholder="Imagem do Produto...">
-        <input type="PrecoProduto" placeholder="Preco do Produto...">
-        <button type="enviar">Enviar</button>
+        <form action="/listar" method="POST">
+          <input type="text" placeholder="Nome do Produto...">
+          <input type="text" placeholder="Descrição do Produto...">
+          <input type="file" placeholder="Imagem do Produto...">
+          <input type="number" placeholder="Preco do Produto...">
+          <button type="submit">Enviar</button>
+        </form>
       </div>
 
       <div class="outros">
         <h2>Outros</h2>
-        <input type="" placeholder="">
-        <input type="" placeholder="">
-        <input type="" placeholder="">
-        <input type="" placeholder="">
-        <button type="enviar">Enviar</button>
+        <form action="" method="POST">
+          <input type="" placeholder="">
+          <input type="" placeholder="">
+          <input type="" placeholder="">
+          <input type="" placeholder="">
+          <button type="submit">Enviar</button>
+        </form>
       </div>
     </main>
   </div>
