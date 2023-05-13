@@ -56,7 +56,7 @@ app.use('/pagamento', pagamentoRoutes);
 app.use('/itemPedido', itemPedidoRoutes);
 app.use('/pedidos', pedidoRoutes);
 app.use('/produtos', produtosRoutes);
-app.use('/administrador', adminRoutes)
+app.use('/admin', adminRoutes)
 
 
 

@@ -13,7 +13,7 @@
 
 <body>
   <header id="head">
-    <h1>Olá, Administrador ${xx}</h1>
+    <h1>Olá, Administrador </h1>
     <a href="http://localhost:3001/login">
       <h1>Logar</h1>
     </a>
@@ -26,70 +26,37 @@
 
     <div class="slidebar">
       <ul>
-        <li><a><button id="atualizar" type="">Atualizar</button></a></li>
+        <!-- <li><a><button id="atualizar" type="">Atualizar</button></a></li> -->
         <li><a><button id="criar" type="">Criar</button></a></li>
-        <li><a><button id="deleta" type="">Deletar</button></a></li>
-        <li><a><button id="list" type="">Listar</button></a></li>
-        <li><a><button id="outros" type="">Outros</button></a></li>
       </ul>
     </div>
 
     <main class="main">
-      <div class="update visivel">
+      <!-- <div class="update visivel">
         <h2>Atualizar</h2>
-        <form action="/atualizar" method="POST">
-          <input type="text" placeholder="Nome do Produto...">
-          <input type="text" placeholder="Descrição do Produto...">
-          <input type="file" placeholder="Imagem do Produto...">
-          <input type="number" placeholder="Preco do Produto...">
+        <form action="/admin/editar?_method=PUT" method="POST" enctype="multipart/form-data">
+          <input type="text" name="nomeProduto" value="">
+          <input type="text" name="descricaoProduto" placeholder="Descrição do Produto...">
+          <input type="file" name="imgProduto" placeholder="Imagem do Produto...">
+          <input type="number" name="precoProduto" value="">
           <button type="submit">Enviar</button>
         </form>
-      </div>
+      </div> -->
 
-      <div class="create">
+      <div class="create visivel">
         <h2>Criar</h2>
-        <form action="/criar" method="POST">
-          <input type="text" placeholder="Nome do Produto...">
-          <input type="text" placeholder="Descrição do Produto...">
-          <input type="file" placeholder="Imagem do Produto...">
-          <input type="number" placeholder="Preco do Produto...">
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-
-      <div class="delet">
-        <h2>Deletar</h2>
-        <form action="/deletar" method="POST">
-          <input type="text" placeholder="Nome do Produto...">
-          <input type="text" placeholder="Descrição do Produto...">
-          <input type="file" placeholder="Imagem do Produto...">
-          <input type="number" placeholder="Preco do Produto...">
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-
-      <div class="list">
-        <h2>Listar</h2>
-        <form action="/listar" method="POST">
-          <input type="text" placeholder="Nome do Produto...">
-          <input type="text" placeholder="Descrição do Produto...">
-          <input type="file" placeholder="Imagem do Produto...">
-          <input type="number" placeholder="Preco do Produto...">
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-
-      <div class="outros">
-        <h2>Outros</h2>
-        <form action="" method="POST">
-          <input type="" placeholder="">
-          <input type="" placeholder="">
-          <input type="" placeholder="">
-          <input type="" placeholder="">
+        <form action="/admin/criar" method="POST" enctype="multipart/form-data">
+          <input type="text" name="nomeProduto" placeholder="Nome do Novo Produto...">
+          <input type="text" name="descricaoProduto" placeholder="Descrição do Novo Produto...">
+          <input type="file" name="imgProduto" placeholder="Imagem do Novo Produto...">
+          <input type="number" name="precoProduto" placeholder="Preço do Novo Produto...">
+          <input type="number" name="estoque" placeholder="Quantidade de estoque...">
+          <input type="text" name="categoria" placeholder="Categoria do Produto...">
           <button type="submit">Enviar</button>
         </form>
       </div>
     </main>
+
   </div>
 </body>
 
