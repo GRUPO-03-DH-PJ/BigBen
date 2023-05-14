@@ -6,22 +6,21 @@ function viewATT(req, res) {
 
 async function storeProducts(req, res) {
   const {
-    dish,
-    sku,
-    descriptions,
-    price,
-    quantity,
-    image
+    nomeProduto,
+    descricaoProduto,
+    precoProduto,
+    quantidadeEstoque,
+    imagemProduto
   } = req.body;
-  const createdMenu = await Produto.create({
-    dish,
-    sku,
-    descriptions,
-    price,
-    quantity,
-    image: req.file.filename
+
+  const createProduto = await Produto.create({
+    NomeProduto: nomeProduto,
+    DescricaoProduto: descricaoProduto,
+    PrecoProduto: precoProduto,
+    ImagemProduto: req.file.imagemProduto,
+    QuantidadeEstoque: quantidadeEstoque
   });
-  console.log(createdMenu)
+  console.log(createProduto)
   return res.redirect('/administrador/lista-de-produtos')
 }
 

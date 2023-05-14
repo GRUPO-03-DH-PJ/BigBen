@@ -23,7 +23,7 @@ const upload = multer({
 router.get('/', adminController.viewATT)
 router.get('/lista-de-produtos', adminController.listProduct)
 router.get('/cadastrando-produtos', adminController.pageProduct)
-router.post('/cadastrando-produtos', upload.single('image'), adminController.storeProducts)
+router.post('/cadastrando-produtos', upload.single('images'), adminController.storeProducts)
 
 //Update
 router.get('/editando-produtos/:id', adminController.editProducts)
