@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database');
-const Categoria = require('./categoria')
 
 const Produto = sequelize.define('Produto', {
   IdProduto: {
@@ -30,9 +29,5 @@ const Produto = sequelize.define('Produto', {
 }, {
   tableName: 'produto',
 });
-
-Produto.belongsTo(Categoria, {
-  foreignKey: 'idCategoria',
-})
 
 module.exports = Produto;

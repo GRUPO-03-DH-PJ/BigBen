@@ -1,81 +1,102 @@
 const Produto = require('../models/produto');
-const Categoria = require('../models/categoria');
 
-function admin(req, res) {
-  return res.render('admin')
+function viewATT(req, res) {
+  res.render('adminProdutoCreate')
 }
 
-async function criarProduto(req, res) {
-  let {
-    nomeProduto,
-    descricaoProduto,
-    imgProduto,
-    precoProduto,
-    estoque,
-    categoria
+async function storeProducts(req, res) {
+  const {
+    dish,
+    sku,
+    descriptions,
+    price,
+    quantity,
+    image
+  } = req.body;
+  const createdMenu = await Produto.create({
+    dish,
+    sku,
+    descriptions,
+    price,
+    quantity,
+    image: req.file.filename
+  });
+  console.log(createdMenu)
+  return res.redirect('/administrador/lista-de-produtos')
+}
+
+async function listProduct(req, res) {
+  const products = await Produto.findAll()
+  console.log(products)
+
+  res.render('adminProduto', {
+    products,
+    titulo: 'Produtos'
+  })
+}
+
+async function editProducts(req, res) {
+  const idProducts = req.params.id;
+  const products = await Menu.findByPk(idProducts)
+
+  return res.render('adminProdutoEdita', {
+    products,
+    titulo: `Editando Produtos`
+  })
+}
+
+async function updateProducts(req, res) {
+  const idUpdate = req.params.id;
+  const {
+    dish,
+    sku,
+    descriptions,
+    price,
+    quantity,
+    image
   } = req.body;
 
-  const criar = await Produto.create({
-    NomeProduto: nomeProduto,
-    DescricaoProduto: descricaoProduto,
-    PrecoProduto: precoProduto,
-    ImagemProduto: imgProduto,
-    QuantidadeEstoque: estoque,
-    NomeCategoria: categoria
+  const toUpdate = await Produto.update({
+    dish,
+    sku,
+    descriptions,
+    price,
+    quantity,
+    image,
+  }, {
+    where: {
+      id: idUpdate
+    }
+  })
+
+  console.log(toUpdate)
+  return res.redirect('/administrador/lista-de-produtos')
+}
+
+async function destroyProducts(req, res) {
+  const idToDelete = req.params.id;
+  await Produto.destroy({
+    where: {
+      id: idToDelete
+    }
   });
 
-  res.render('home')
+  console.log(idToDelete)
+  return res.redirect('/administrador/lista-de-produtos')
 }
 
-async function editar(req, res) {
-  let {
-    nomeProduto,
-    descricaoProduto,
-    imgProduto,
-    precoProduto,
-    estoque,
-    categoria
-  } = req.body;
-
-  const produtos = await Produto.findAll(id);
-
-  return res.render('adminProdutos', {
-    produtos
-  })
-
-}
-
-async function listProduto(req, res) {
-  let Produtos = [{}]
-  res.render('adminProdutos', {
-    listProduto: Produtos
+function pageProduct(req, res) {
+  res.render('adminProdutoCreate', {
+    titulo: 'Cadastro de Produtos'
   })
 }
-
-async function deletarProduto(req, res) {
-  let {
-    id
-  } = req.params;
-
-  res.send("Estou deletando o Produto com o id: " + id)
-}
-
-async function viewsAttPT(req, res) {
-  let {
-    id
-  } = req.params;
-
-  res.render('admin', {
-    produto: produtos[id]
-  })
-}
-
 
 module.exports = {
-  admin,
-  criarProduto,
-  deletarProduto,
-  editar,
-  viewsAttPT,
-  listProduto,
+  viewATT,
+  storeProducts,
+  listProduct,
+  pageProduct,
+  editProducts,
+  updateProducts,
+  destroyProducts
 }

@@ -4,19 +4,6 @@ CREATE DATABASE bigben;
 
 USE bigben;
 
-CREATE TABLE Categoria (
-    IdCategoria INT PRIMARY KEY AUTO_INCREMENT,
-    NomeCategoria VARCHAR(100) NOT NULL,
-    ImagemProduto VARCHAR(255)
-);
-
-CREATE TABLE Fornecedor (
-    IdFornecedor INT PRIMARY KEY AUTO_INCREMENT,
-    NomeFornecedor VARCHAR(100) NOT NULL,
-    EnderecoFornecedor VARCHAR(255) NOT NULL,
-    TelefoneFornecedor VARCHAR(20) NOT NULL,
-    EmailFornecedor VARCHAR(100) NOT NULL UNIQUE
-);
 
 CREATE TABLE Produto (
     IdProduto INT PRIMARY KEY AUTO_INCREMENT,
@@ -24,13 +11,7 @@ CREATE TABLE Produto (
     DescricaoProduto TEXT,
     PrecoProduto DECIMAL(10,2) NOT NULL,
     ImagemProduto VARCHAR(255),
-    QuantidadeEstoque INT NOT NULL,
-    IdCategoria INT NOT NULL,
-    IdFornecedor INT NOT NULL,
-    FOREIGN KEY (IdCategoria) REFERENCES Categoria(IdCategoria),
-    FOREIGN KEY (IdFornecedor) REFERENCES Fornecedor(IdFornecedor),
-    INDEX (IdCategoria),
-    INDEX (IdFornecedor)
+    QuantidadeEstoque INT NOT NULL
 );
 
 CREATE TABLE Cliente (
