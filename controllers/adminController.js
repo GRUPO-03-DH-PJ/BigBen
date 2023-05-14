@@ -4,7 +4,7 @@ function viewATT(req, res) {
   res.render('adminProdutoCreate')
 }
 
-async function storeProducts(req, res) {
+async function CreateProducts(req, res) {
   const {
     nomeProduto,
     descricaoProduto,
@@ -92,7 +92,7 @@ function pageProduct(req, res) {
 
 module.exports = {
   viewATT,
-  storeProducts,
+  CreateProducts,
   listProduct,
   pageProduct,
   editProducts,
