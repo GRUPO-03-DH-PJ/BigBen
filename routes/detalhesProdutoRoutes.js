@@ -4,5 +4,6 @@ const detalhesProdutoController = require('../controllers/detalhesProdutoControl
 
 
 router.get('/', detalhesProdutoController.detalhesProduto);
+router.get('/monitor', detalhesProdutoController.produtoMonitor);
 
 module.exports = router;
