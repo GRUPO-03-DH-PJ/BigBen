@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
+
 <body>
 
-    <div class="header">
-        <div class="logo">
-            <a href="/home"> <img src="/images/logotras.png" alt=""></a>
-        </div>
-        <div class="search">
-            <form>
-                <input type="text" placeholder="Pesquise aqui...">
-            </form>
-        </div>
-        <div class="icons">
-            <abbr title="Perfil Usuario"><a href="/login" class="fa fa-user-circle-o"></a></abbr>
-            <abbr title="Favoritos"><a href="#" class="fa fa-heart"></a></abbr>
-            <abbr title="Carrinho"><a href="/carrinho/cliente/1" class="fa fa-shopping-cart"></a></abbr>
-            <a href="#" class="fa fa-navicon"></a>
-        </div>
-
+  <div class="header">
+    <div class="logo">
+      <a href="/home"> <img src="/images/logotras.png" alt=""></a>
     </div>
-    <div class="links">
-        <a href="/categorias">Categorias</a>
-        <a href="#">Lançamentos</a>
-        <a href="#">Acessórios Gamer</a>
-        <a href="#">Celulares</a>
-        <a href="#">Outros</a>
+    <div class="search">
+      <form>
+        <input type="text" placeholder="Pesquise aqui...">
+      </form>
+    </div>
+    <div class="icons">
+      <abbr title="Perfil Usuario"><a href="/login" class="fa fa-user-circle-o"></a></abbr>
+      <abbr title="Favoritos"><a href="#" class="fa fa-heart"></a></abbr>
+      <abbr title="Carrinho"><a href="/carrinho/cliente/1" class="fa fa-shopping-cart"></a></abbr>
+      <a href="#" class="fa fa-navicon"></a>
     </div>
 
-    <script>
-        document.getElementsByClassName("fa") [3] .addEventListener("click", function(){
-            document.getElementsByClassName("links") [0].classList.toggle("showmylinks");
-        });
-    </script>
+  </div>
+  <div class="links">
+    <a href="/categorias">Categorias</a>
+    <a href="#">Acessórios Gamer</a>
+    <a href="#">Celulares</a>
+    <a href="/painelUsuario">Painel do Usuário</a>
+  </div>
+
+  <script>
+    document.getElementsByClassName("fa")[3].addEventListener("click", function () {
+      document.getElementsByClassName("links")[0].classList.toggle("showmylinks");
+    });
+
+  </script>
 
 </body>
+
 </html>

@@ -5,5 +5,8 @@ const detalhesProdutoController = require('../controllers/detalhesProdutoControl
 
 router.get('/', detalhesProdutoController.detalhesProduto);
 router.get('/monitor', detalhesProdutoController.produtoMonitor);
+router.get('/notbook', detalhesProdutoController.produtoNotbook);
+router.get('/mause', detalhesProdutoController.produtoMause);
+router.get('/switch', detalhesProdutoController.produtoSwitch);
 
 module.exports = router;

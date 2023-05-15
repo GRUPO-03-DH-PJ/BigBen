@@ -11,7 +11,7 @@ const multerDiskerStorage = multer.diskStorage({
     callback(null, folder);
   },
   fileName: (req, file, calback) => {
-    let imageName = Date.now() + file.originalname;
+    let imageName = `${Date.now()}images${path.extname(file.originalname)}`;
     calback(null, imageName);
   },
 });

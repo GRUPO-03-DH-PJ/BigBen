@@ -18,7 +18,7 @@ async function loggingIn(req, res) {
   if (userToLogin) {
     let isPasswordVerified = bcrypt.compareSync(req.body.Senha, userToLogin.Senha)
     if (isPasswordVerified) {
-      return res.render('home')
+      return res.render('painelUsuario')
     }
 
     return res.render('loginForm', {

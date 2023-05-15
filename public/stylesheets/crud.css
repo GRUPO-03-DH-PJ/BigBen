@@ -1,3 +1,7 @@
+body {
+  background-color: aquamarine;
+}
+
 .align {
   margin-top: 50px;
   padding: 10px;
@@ -8,8 +12,8 @@
 }
 
 .container thead {
-  background: #C3103C;
-  color: white;
+  background: #28209c;
+  color: rgb(114, 220, 228);
 }
 
 .table {
@@ -24,7 +28,7 @@
   margin: 0 auto;
   flex-wrap: wrap;
   width: 100%;
-  gap: 10px;
+  gap: 50px;
 }
 
 .container-inp label {
@@ -41,8 +45,8 @@
   padding: 10px;
   border: none;
   width: 250px;
-  background-color: #C3103C;
-  color: white;
+  background-color: #10c319;
+  color: rgb(54, 53, 53);
   font-weight: 700;
   font-size: 15px;
   border-radius: 10px;
