@@ -1,20 +1,22 @@
 const {
   validationResult
-} = require('express-validator'); // validando resultado
+} = require('express-validator');
 const User = require('../models/cliente');
 const bcrypt = require('bcrypt');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 const controller = {
   register: (req, res) => {
     return res.render('registerForm');
   },
   processoRegister: async (req, res) => {
-    const resultValidations = validationResult(req); // requerindo as validaçoes no resultado de validaçoes.
-    // Se o resultado da validações for vazio , enviamos o errors para o formulario
+    const resultValidations = validationResult(req);
+
     if (resultValidations.errors.length > 0) {
       return res.render('registerForm', {
         errors: resultValidations.mapped(),
-        oldData: req.body // mandando para views todoas as propriedade de errors
+        oldData: req.body
       });
     };
 
@@ -68,7 +70,12 @@ const controller = {
     }
     let userCreated = await User.create(userToCreate);
 
+    // Configurar a sessão e os cookies
+    req.session.user = userCreated; // Armazenar o usuário na sessão
+    res.cookie('userId', userCreated.id, { maxAge: 3600000 }); // Definir o cookie userId com o ID do usuário por 1 hora
+
     return res.redirect('/login');
   },
 };
+
 module.exports = controller;
