@@ -4,16 +4,6 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
-// Inicializa os middlewares de sessão e cookie parser
-app.use(cookieParser());
-app.use(
-  session({
-    secret: 'sua-chave-secreta',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true } // Defina a opção secure do cookie com base na sua configuração
-  })
-);
 
 function login(req, res) {
   return res.render('loginForm');
