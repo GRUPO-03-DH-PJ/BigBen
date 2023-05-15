@@ -17,7 +17,7 @@ async function CreateProducts(req, res) {
     NomeProduto: nomeProduto,
     DescricaoProduto: descricaoProduto,
     PrecoProduto: precoProduto,
-    ImagemProduto: req.file.imagemProduto,
+    ImagemProduto: imagemProduto,
     QuantidadeEstoque: quantidadeEstoque
   });
   console.log(createProduto)
@@ -36,7 +36,7 @@ async function listProduct(req, res) {
 
 async function editProducts(req, res) {
   const idProducts = req.params.id;
-  const products = await Menu.findByPk(idProducts)
+  const products = await Produto.findByPk(idProducts)
 
   return res.render('adminProdutoEdita', {
     products,
@@ -47,21 +47,19 @@ async function editProducts(req, res) {
 async function updateProducts(req, res) {
   const idUpdate = req.params.id;
   const {
-    dish,
-    sku,
-    descriptions,
-    price,
-    quantity,
-    image
+    nomeProduto,
+    descricaoProduto,
+    precoProduto,
+    quantidadeEstoque,
+    imagemProduto
   } = req.body;
 
   const toUpdate = await Produto.update({
-    dish,
-    sku,
-    descriptions,
-    price,
-    quantity,
-    image,
+    NomeProduto: nomeProduto,
+    DescricaoProduto: descricaoProduto,
+    PrecoProduto: precoProduto,
+    ImagemProduto: imagemProduto,
+    QuantidadeEstoque: quantidadeEstoque
   }, {
     where: {
       id: idUpdate
