@@ -9,7 +9,6 @@ async function CreateProducts(req, res) {
     nomeProduto,
     descricaoProduto,
     precoProduto,
-    imagemProduto,
     quantidadeEstoque
   } = req.body;
 
@@ -17,7 +16,7 @@ async function CreateProducts(req, res) {
     NomeProduto: nomeProduto,
     DescricaoProduto: descricaoProduto,
     PrecoProduto: precoProduto,
-    ImagemProduto: imagemProduto,
+    ImagemProduto: req.file.filename,
     QuantidadeEstoque: quantidadeEstoque
   }
   let newProducts = await Produto.create(createProduto);
@@ -49,7 +48,7 @@ async function updateProducts(req, res) {
     nomeProduto,
     descricaoProduto,
     precoProduto,
-    imagemProduto,
+    images,
     quantidadeEstoque
   } = req.body;
 
@@ -57,7 +56,7 @@ async function updateProducts(req, res) {
     NomeProduto: nomeProduto,
     DescricaoProduto: descricaoProduto,
     PrecoProduto: precoProduto,
-    ImagemProduto: imagemProduto,
+    ImagemProduto: images,
     QuantidadeEstoque: quantidadeEstoque
   }, {
     where: {

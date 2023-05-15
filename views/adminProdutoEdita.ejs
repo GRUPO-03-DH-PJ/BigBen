@@ -31,35 +31,35 @@
 
   <div class="align">
     <div class="container-inp">
-      <form action="/administrador/lista-de-produtos/<%= products.id %>?_method=PUT" method="POST">
+      <form action="/administrador/editando-produtos/<%= products.IdProduto %>?_method=PUT" method="post"
+        enctype="multipart/form-data">
 
         <div class="mb-3">
           <label for="text" class="form-label">Nome do Produto *</label>
-          <input class="form-control" type="text" id="formFile" name="nomeProduto" value="<%= products.nomeProduto %>">
+          <input class="form-control" type="text" id="formFile" name="nomeProduto" value="<%= products.NomeProduto %>">
         </div>
 
         <div class="mb-3">
           <label for="text" class="form-label">Descrição Produto*</label>
           <input class="form-control" type="text" id="formFile" name="descricaoProduto"
-            value="<%= products.descricaoProduto %>">
+            value="<%= products.DescricaoProduto %>">
         </div>
 
         <div class="mb-3">
           <label for="number" class="form-label">Preço do Produto*</label>
           <input class="form-control" type="number" id="formFile" name="precoProduto"
-            value="<%= products.precoProduto %>">
+            value="<%= products.PrecoProduto %>">
         </div>
 
         <div class="mb-3">
           <label for="file" class="form-label">URL da imagem *</label>
-          <input class="form-control" type="file" id="formFile" name="imagemProduto"
-            value="<%= products.imagemProduto %>">
+          <input class="form-control" type="file" id="formFile" name="images" value="<%= products.ImagemProduto %>">
         </div>
 
         <div class="mb-3">
           <label for="number" class="form-label">Quantidades *</label>
           <input class="form-control" type="number" id="formFile" name="quantidadeEstoque"
-            value="<%= products.quantidadeEstoque %>">
+            value="<%= products.QuantidadeEstoque %>">
         </div>
 
         <button>Salvar Alterações</button>
