@@ -9,7 +9,6 @@ async function CreateProducts(req, res) {
     nomeProduto,
     descricaoProduto,
     precoProduto,
-    imagemProduto,
     quantidadeEstoque
   } = req.body;
 
@@ -17,7 +16,7 @@ async function CreateProducts(req, res) {
     NomeProduto: nomeProduto,
     DescricaoProduto: descricaoProduto,
     PrecoProduto: precoProduto,
-    ImagemProduto: imagemProduto,
+    ImagemProduto: req.file.filename,
     QuantidadeEstoque: quantidadeEstoque
   }
   let newProducts = await Produto.create(createProduto);
@@ -49,7 +48,6 @@ async function updateProducts(req, res) {
     nomeProduto,
     descricaoProduto,
     precoProduto,
-    imagemProduto,
     quantidadeEstoque
   } = req.body;
 
@@ -57,11 +55,11 @@ async function updateProducts(req, res) {
     NomeProduto: nomeProduto,
     DescricaoProduto: descricaoProduto,
     PrecoProduto: precoProduto,
-    ImagemProduto: imagemProduto,
+    ImagemProduto: req.file.filename,
     QuantidadeEstoque: quantidadeEstoque
   }, {
     where: {
-      id: idUpdate
+      IdProduto: idUpdate
     }
   })
 
@@ -72,7 +70,7 @@ async function destroyProducts(req, res) {
   const idToDelete = req.params.id;
   await Produto.destroy({
     where: {
-      id: idToDelete
+      IdProduto: idToDelete
     }
   });
 

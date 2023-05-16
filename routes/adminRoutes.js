@@ -10,9 +10,9 @@ const multerDiskerStorage = multer.diskStorage({
     const folder = path.join(__dirname, "../public/images")
     callback(null, folder);
   },
-  fileName: (req, file, calback) => {
-    let imageName = `${Date.now()}images${path.extname(file.originalname)}`;
-    calback(null, imageName);
+  filename: (req, file, callback) => {
+    let filename = `${Date.now()}images${path.extname(file.originalname)}`;
+    callback(null, filename);
   },
 });
 
@@ -20,6 +20,7 @@ const upload = multer({
   storage: multerDiskerStorage
 })
 
+router.use(auth)
 router.get('/', adminController.viewATT)
 router.get('/lista-de-produtos', adminController.listProduct)
 router.get('/cadastrando-produtos', adminController.pageProduct)
@@ -27,7 +28,7 @@ router.post('/cadastrando-produtos', upload.single('images'), adminController.Cr
 
 //Update
 router.get('/editando-produtos/:id', adminController.editProducts)
-router.put('/editando-produtos/:id', adminController.updateProducts)
+router.put('/editando-produtos/:id', upload.single('images'), adminController.updateProducts)
 router.delete('/deletar-produto/:id', adminController.destroyProducts)
 
 

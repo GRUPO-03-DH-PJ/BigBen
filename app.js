@@ -5,6 +5,7 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let session = require('express-session');
 let becrypt = require('bcrypt');
+let methodOverride = require('method-override');
 
 
 let app = express();
@@ -26,6 +27,7 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static('./public'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 // Rota Routes
 const detalhesProdutoRoutes = require('./routes/detalhesProdutoRoutes');
