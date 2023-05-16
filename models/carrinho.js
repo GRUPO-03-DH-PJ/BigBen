@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database');
-const Produto = require('./produto');
-const Cliente = require('./cliente');
+
 
 const Carrinho = sequelize.define('Carrinho', {
     IdCarrinho: {
@@ -25,7 +24,13 @@ const Carrinho = sequelize.define('Carrinho', {
     tableName: 'carrinho',
 });
 
-Carrinho.belongsTo(Produto, { foreignKey: 'IdProduto' });
-Carrinho.belongsTo(Cliente, { foreignKey: 'IdCliente' });
+Carrinho.associate = function(models) {
+    Carrinho.belongsTo(models.Cliente, { foreignKey: 'IdCliente' });
+    Produto.belongsToMany(models.Carrinho, { through: 'Produto_Carrinho' });
+};
+
+
+
+
 
 module.exports = Carrinho;

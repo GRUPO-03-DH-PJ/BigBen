@@ -2,47 +2,47 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalhes do Produto</title>
-  <%- include('./partials/style') %>
-  <link rel="stylesheet" href="/stylesheets/detalhesProduto.css">
-  <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <%- include('./partials/style') %>
+        <link rel="stylesheet" href="/stylesheets/detalhesProduto.css">
+        <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/x-icon">
 </head>
 
 <body>
-  <%- include('./partials/header') %>
-  <section id="container">
-    <div class="product-name">
-      <h3>Monitor Gamer LG Full HD, 144 Hz, HDMI</h3>
-    </div>
-    <div class="product-image">
-      <img src="/img/Monitor-gamer.jpg" alt="" style="width: 300px">>
-    </div>
-    <div class="product-info">
-      <h3 class="product-price">VALOR <br> R$ 1299,89</h3>
-      <button type="submit" class="buy-button" name="comprar" value="comprar">
-        <a href="">COMPRAR</a>
+    <%- include('./partials/header') %>
+        <section id="container">
+            <div class="product-name">
+                <h3>Monitor Gamer LG Full HD, 144 Hz, HDMI</h3>
+            </div>
+            <div class="product-image">
+                <img src="/img/Monitor-gamer.jpg" alt="" style="width: 300px">>
+            </div>
+            <div class="product-info">
+                <h3 class="product-price">VALOR <br> R$ 1299,89</h3>
+                <button type="submit" class="buy-button" name="comprar" value="comprar">
+        <a href="http://localhost:3001/carrinho/monitor">COMPRAR</a>
       </button>
-      <br><br>
-      <button type="submit" class="cart-button" name="carrinho" value="carrinho">
-        <a class="adicionar" href="">ADICIONAR <br> AO CARRINHO</a>
+                <br><br>
+                <button type="submit" class="cart-button" name="carrinho" value="carrinho">
+        <a class="adicionar" href="http://localhost:3001/carrinho/monitor">ADICIONAR <br> AO CARRINHO</a>
       </button>
-    </div>
-    <div class="product-description">
-      <h2>Descrição do Produto</h2>
-      <ul class="product-details">
-        <li>Tamanho da tela: 24 polegadas,</li>
-        <li>Resolução: Full HD (1920x1080),</li>
-        <li>Taxa de atualização: 144 Hz,</li>
-        <li>Entradas: HDMI, DisplayPort,</li>
-        <li>Tecnologias: AMD FreeSync, Flicker Safe, Reader Mode,</li>
-        <li>Dimensões: 558 x 421 x 180 mm,</li>
-        <li>Peso: 4,2 kg.</li>
-      </ul>
-    </div>
-  </section>
-  <%- include('./partials/footer') %>
+            </div>
+            <div class="product-description">
+                <h2>Descrição do Produto</h2>
+                <ul class="product-details">
+                    <li>Tamanho da tela: 24 polegadas,</li>
+                    <li>Resolução: Full HD (1920x1080),</li>
+                    <li>Taxa de atualização: 144 Hz,</li>
+                    <li>Entradas: HDMI, DisplayPort,</li>
+                    <li>Tecnologias: AMD FreeSync, Flicker Safe, Reader Mode,</li>
+                    <li>Dimensões: 558 x 421 x 180 mm,</li>
+                    <li>Peso: 4,2 kg.</li>
+                </ul>
+            </div>
+        </section>
+        <%- include('./partials/footer') %>
 </body>
 
 </html>

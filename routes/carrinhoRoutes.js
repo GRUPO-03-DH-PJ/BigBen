@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const carrinhoController = require('../controllers/carrinhoController');
 
+router.get('/monitor', carrinhoController.carrinhoMonitor);
+
+
+
 router.get('/', carrinhoController.findAll);
 router.get('/:id', carrinhoController.findOne);
 router.post('/', carrinhoController.create);

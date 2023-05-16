@@ -4,6 +4,9 @@ const carrinhoController = {
     carrinho: (req, res, next) => {
         return res.render('carrinho');
     },
+    carrinhoMonitor: (req, res, next) => {
+        return res.render('carrinhoMonitor');
+    },
 
     create: async(req, res) => {
         try {

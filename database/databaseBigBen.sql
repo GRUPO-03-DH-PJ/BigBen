@@ -45,25 +45,11 @@ CREATE TABLE Pedido (
     INDEX (IdCliente)
 );
 
-CREATE TABLE ItemPedido (
-    IdItemPedido INT PRIMARY KEY AUTO_INCREMENT,
-    Quantidade INT NOT NULL,
-    PrecoUnitario DECIMAL(10,2) NOT NULL,
-    Total DECIMAL(10,2) NOT NULL,
-    IdProduto INT NOT NULL,
-    IdPedido INT NOT NULL,
-    FOREIGN KEY (IdProduto) REFERENCES Produto(IdProduto),
-    FOREIGN KEY (IdPedido) REFERENCES Pedido(IdPedido),
-    INDEX (IdProduto),
-    INDEX (IdPedido)
-);
+
 
 CREATE TABLE Carrinho (
     IdCarrinho INT PRIMARY KEY AUTO_INCREMENT,
     IdCliente INT NOT NULL,
-    IdProduto INT NOT NULL,
-    Quantidade INT NOT NULL,
-    PrecoUnitario DECIMAL(10,2) NOT NULL,
     Total DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (IdCliente) REFERENCES Cliente(IdCliente),
     FOREIGN KEY (IdProduto) REFERENCES Produto(IdProduto),
