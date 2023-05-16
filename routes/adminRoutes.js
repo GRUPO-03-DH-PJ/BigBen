@@ -20,7 +20,7 @@ const upload = multer({
   storage: multerDiskerStorage
 })
 
-router.use(auth)
+// router.use(auth)
 router.get('/', adminController.viewATT)
 router.get('/lista-de-produtos', adminController.listProduct)
 router.get('/cadastrando-produtos', adminController.pageProduct)
