@@ -28,7 +28,7 @@ CREATE TABLE Cliente (
     Estado CHAR(2) NOT NULL,
     CEP CHAR(10) NOT NULL,
     Genero VARCHAR(20),
-    Senha varchar(50),
+    Senha varchar(200),
     INDEX (CPF)
 );
 

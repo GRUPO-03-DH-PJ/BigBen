@@ -1,4 +1,6 @@
-const { where } = require('sequelize');
+const {
+  where
+} = require('sequelize');
 const User = require('../models/cliente');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
@@ -22,7 +24,9 @@ async function loggingIn(req, res) {
       // Define a sessão do usuário
       req.session.user = userToLogin;
       // Configurar a sessão e os cookies
-    res.cookie('userId', userToLogin.IdCliente, { maxAge: 5000000 }); // Definir o cookie userId com o ID do usuário por 1 hora
+      res.cookie('userId', userToLogin.IdCliente, {
+        maxAge: 5000000
+      }); // Definir o cookie userId com o ID do usuário por 1 hora
 
       return res.render('painelUsuario');
     }
