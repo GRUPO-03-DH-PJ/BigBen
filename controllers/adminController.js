@@ -48,7 +48,6 @@ async function updateProducts(req, res) {
     nomeProduto,
     descricaoProduto,
     precoProduto,
-    images,
     quantidadeEstoque
   } = req.body;
 
@@ -56,11 +55,11 @@ async function updateProducts(req, res) {
     NomeProduto: nomeProduto,
     DescricaoProduto: descricaoProduto,
     PrecoProduto: precoProduto,
-    ImagemProduto: images,
+    ImagemProduto: req.file.filename,
     QuantidadeEstoque: quantidadeEstoque
   }, {
     where: {
-      id: idUpdate
+      IdProduto: idUpdate
     }
   })
 
@@ -71,7 +70,7 @@ async function destroyProducts(req, res) {
   const idToDelete = req.params.id;
   await Produto.destroy({
     where: {
-      id: idToDelete
+      IdProduto: idToDelete
     }
   });
 

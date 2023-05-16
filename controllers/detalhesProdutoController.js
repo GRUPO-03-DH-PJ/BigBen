@@ -1,19 +1,16 @@
+const Produto = require('../models/produto')
+
 const detalhesProdutoController = {
-  detalhesProduto: (req, res, next) => {
-    return res.render('detalhesProduto');
+  detalhesProduto: async (req, res, next) => {
+    const product = await Produto.findByPk(req.params.id)
+    console.log(product)
+    if (!product) {
+      return res.send("Produto Não encontrado")
+    }
+    return res.render('detalhesProduto', {
+      product
+    });
   },
-  produtoMonitor: (req, res, next) => {
-    return res.render('produtoMonitor');
-  },
-  produtoNotbook: (req, res) => {
-    return res.render('produtoNotbook')
-  },
-  produtoMause: (req, res) => {
-    return res.render('produtoMause')
-  },
-  produtoSwitch: (req, res) => {
-    return res.render('produtoSwitch')
-  }
 }
 
 

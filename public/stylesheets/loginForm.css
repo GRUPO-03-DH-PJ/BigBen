@@ -84,7 +84,7 @@ input:focus {
   border-color: #e60084;
 }
 
-input[type="submit"] {
+.btn-submit {
   background-color: #e60084;
   color: #fff;
   border: none;
