@@ -1,4 +1,4 @@
-<h1 align='center'> Projeto integrador - Digital House </h1>
+<h1 align='center'> Projeto integrador - Digital House</h1>
 
 <p>
 Seja bem-vindo. Esse repositório é dedicado ao projeto integrador do Curso Desenvolvimento Web full Stack da Digital House.
@@ -20,21 +20,21 @@ Os Objetivos do projeto são:
 
 - [✓] Design do e-commerce Concluido.
 - [✓] CRUD.
-- [✓]
 - [✓] Responsividade.
 
 ## 🔧 - Tecnologias - Utilizadas
 
 
--
--
--
--
+- Node.js
+- Express.js
+- MySQL
+- Sequelize
+- Ejs
 
 
 
 ## 👨‍💻  - Desenvolvedores - Grupo 3
-- Elias
-- Geovanni
+- José Elias Miguel Seraidarian
+- Geovanni Ferreira dos Santos
 - Gustavo Duque Léo
-- Higor
+- Higor Moreira dos Santos
