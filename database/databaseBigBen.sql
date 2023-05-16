@@ -52,9 +52,8 @@ CREATE TABLE Carrinho (
     IdCliente INT NOT NULL,
     Total DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (IdCliente) REFERENCES Cliente(IdCliente),
-    FOREIGN KEY (IdProduto) REFERENCES Produto(IdProduto),
     INDEX (IdCliente),
-    INDEX (IdProduto)
+
 );
 
 CREATE TABLE bigben.pagamento (
