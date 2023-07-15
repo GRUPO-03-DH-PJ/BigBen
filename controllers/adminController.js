@@ -1,4 +1,5 @@
 const Produto = require('../models/produto');
+const Categoria = require('../models/categoria');
 
 function viewATT(req, res) {
   res.render('adminProdutoCreate')
@@ -9,7 +10,8 @@ async function CreateProducts(req, res) {
     nomeProduto,
     descricaoProduto,
     precoProduto,
-    quantidadeEstoque
+    quantidadeEstoque,
+    iDCategoria
   } = req.body;
 
   let createProduto = {
@@ -17,7 +19,8 @@ async function CreateProducts(req, res) {
     DescricaoProduto: descricaoProduto,
     PrecoProduto: precoProduto,
     ImagemProduto: req.file.filename,
-    QuantidadeEstoque: quantidadeEstoque
+    QuantidadeEstoque: quantidadeEstoque,
+    IdCategoria: iDCategoria
   }
   let newProducts = await Produto.create(createProduto);
 
@@ -26,9 +29,11 @@ async function CreateProducts(req, res) {
 
 async function listProduct(req, res) {
   const products = await Produto.findAll()
+  const category = await Categoria.findAll()
 
   res.render('adminProduto', {
-    allproducts: products
+    allproducts: products,
+    allCategory: category
   })
 };
 
@@ -83,6 +88,28 @@ function pageProduct(req, res) {
   })
 };
 
+// Relaçoes de Categoria com Produto
+
+function viewCategoria(req, res) {
+  return res.render("adminCategoria")
+};
+
+async function CriarCategoria(req, res) {
+  const {
+    nomeCategoria,
+  } = req.body;
+
+  let createCategory = {
+    NomeCategoria: nomeCategoria,
+  }
+  let newcategory = await Categoria.create(createCategory);
+
+  return res.redirect('/administrador/cadastrando-categoria');
+};
+
+
+
+
 module.exports = {
   viewATT,
   CreateProducts,
@@ -90,5 +117,7 @@ module.exports = {
   pageProduct,
   editProducts,
   updateProducts,
-  destroyProducts
+  destroyProducts,
+  CriarCategoria,
+  viewCategoria
 }

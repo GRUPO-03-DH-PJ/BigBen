@@ -31,5 +31,11 @@ router.get('/editando-produtos/:id', adminController.editProducts)
 router.put('/editando-produtos/:id', upload.single('images'), adminController.updateProducts)
 router.delete('/deletar-produto/:id', adminController.destroyProducts)
 
+//Categoria
+router.get('/cadastrando-categoria', adminController.viewCategoria)
+router.post('/cadastrando-categoria', adminController.CriarCategoria)
+
+
+
 
 module.exports = router;

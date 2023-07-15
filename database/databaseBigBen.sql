@@ -11,7 +11,9 @@ CREATE TABLE Produto (
     DescricaoProduto TEXT,
     PrecoProduto DECIMAL(10,2) NOT NULL,
     ImagemProduto VARCHAR(255),
-    QuantidadeEstoque INT NOT NULL
+    QuantidadeEstoque INT NOT NULL,
+    FOREIGN KEY (IdCategoria) REFERENCES Categoria(IdCategoria),
+    INDEX (IdCategoria)
 );
 
 CREATE TABLE Cliente (
